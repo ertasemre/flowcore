@@ -2,6 +2,7 @@
   "name": "flowcore-site",
   "version": "0.1.0",
   "private": true,
+  "description": "Underground electronic music collective website",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
