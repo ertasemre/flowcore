@@ -98,7 +98,7 @@ export default function EventsPage() {
             ].map((filterOption) => (
               <motion.button
                 key={filterOption.key}
-                onClick={() => setFilter(filterOption.key as any)}
+                onClick={() => setFilter(filterOption.key as 'all' | 'upcoming' | 'past')}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className={`px-6 py-3 font-mono tracking-wider uppercase transition-all duration-300 ${

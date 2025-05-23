@@ -365,7 +365,7 @@ const HeroSection = () => {
               ease: "easeInOut"
             }}
           >
-            "Join the flow where wonder, music, art and connection unite!"
+            &ldquo;Join the flow where wonder, music, art and connection unite!&rdquo;
           </motion.p>
 
           {/* Enhanced Action Buttons with better effects */}

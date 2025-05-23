@@ -473,13 +473,13 @@ export default function AboutPage() {
                     ease: "easeInOut"
                   }}
                 >
-                  "Join the flow where wonder, music, art and connection unite!"
+                  &ldquo;Join the flow where wonder, music, art and connection unite!&rdquo;
                 </motion.p>
                 
                 <p className="text-lg text-acid-green/80 font-mono leading-relaxed max-w-3xl mx-auto">
                   Bu hikaye burada bitmiyor. Her gece, her set, her beat ile devam ediyor. 
                   Sen de bu hikayenin bir parçası ol. Underground sahnede, neon ışıkların altında, 
-                  bass\'ın titreşiminde buluşalım.
+                  bass&apos;ın titreşiminde buluşalım.
                 </p>
               </div>
             </motion.div>
