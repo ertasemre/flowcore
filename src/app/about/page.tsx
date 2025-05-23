@@ -9,8 +9,8 @@ const storyChapters = [
   {
     id: 'genesis',
     title: 'GENESIS',
-    subtitle: 'Başlangıç',
-    content: 'İstanbul\'un karanlık sokaklarında, elektronik müziğin nabzının attığı gece kulüplerinde... Farklı hikayelerden gelen sanatçılar, ortak bir tutkuyla buluştu. Acidcore\'un sert ritimlerinde, underground\'ın özgürlüğünde.',
+    subtitle: 'The Beginning',
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     year: '2024',
     color: 'acid-green',
     visual: 'city'
@@ -18,8 +18,8 @@ const storyChapters = [
   {
     id: 'awakening',
     title: 'AWAKENING',
-    subtitle: 'Uyanış',
-    content: 'İlk beats\'ler yankılandığında, sadece müzik değil bir hareket doğuyordu. Her decibel, her frekans - sisteme karşı bir çığlık, özgürlüğe doğru bir adım. Underground sahnenin kalbi atmaya başladı.',
+    subtitle: 'The Realization',
+    content: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     year: '2024',
     color: 'cyber-blue',
     visual: 'sound'
@@ -27,8 +27,8 @@ const storyChapters = [
   {
     id: 'collective',
     title: 'COLLECTIVE',
-    subtitle: 'Kolektif',
-    content: 'Tek bir ses değil, binlerce kalbin ortak çarpışı. OGIMARU\'nun psytrance ruhundan, FORMAL\'ın hard techno enerjisine... Her sanatçı, kolektifin bir parçası, hikayenin bir bölümü.',
+    subtitle: 'Unity in Diversity',
+    content: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt.',
     year: '2024',
     color: 'rave-purple',
     visual: 'collective'
@@ -36,8 +36,8 @@ const storyChapters = [
   {
     id: 'underground',
     title: 'UNDERGROUND',
-    subtitle: 'Yeraltı',
-    content: 'Yeryüzünde değil, derinlerde yaşıyor müziğimiz. Mainstream\'in uzağında, saf ve ham. Her etkinlik bir ritual, her set bir yolculuk. Karanlıkta parlayan neon ışıklar gibi.',
+    subtitle: 'Beneath the Surface',
+    content: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.',
     year: '2024',
     color: 'neon-pink',
     visual: 'underground'
@@ -45,8 +45,8 @@ const storyChapters = [
   {
     id: 'present',
     title: 'PRESENT',
-    subtitle: 'Şimdi',
-    content: 'Bugün buradayız. Suma Han\'dan The Black Cave\'e, her sahnede hikayemizi yazıyoruz. Sadece müzik değil, bir yaşam biçimi. Sadece etkinlik değil, bir deneyim. WE ARE THE EVENT.',
+    subtitle: 'Here and Now',
+    content: 'Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio.',
     year: '2024-∞',
     color: 'acid-green',
     visual: 'present'
@@ -231,7 +231,7 @@ export default function AboutPage() {
                   ease: "easeInOut"
                 }}
               >
-                Scroll down to experience our journey through the underground
+                Lorem ipsum dolor sit amet consectetur adipiscing elit
               </motion.p>
             </motion.div>
           </motion.div>
@@ -483,9 +483,9 @@ export default function AboutPage() {
                 </motion.p>
                 
                 <p className="text-lg text-acid-green/80 font-mono leading-relaxed max-w-3xl mx-auto">
-                  Bu hikaye burada bitmiyor. Her gece, her set, her beat ile devam ediyor. 
-                  Sen de bu hikayenin bir parçası ol. Underground sahnede, neon ışıkların altında, 
-                  bass&apos;ın titreşiminde buluşalım.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                 </p>
               </div>
             </motion.div>
