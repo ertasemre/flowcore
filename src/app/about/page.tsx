@@ -62,12 +62,16 @@ export default function AboutPage() {
 
   const [activeChapter, setActiveChapter] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
+  const [isClient, setIsClient] = useState(false);
 
   // Background parallax effects
   const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
   const backgroundOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.3, 0.1]);
 
   useEffect(() => {
+    // Set client-side flag
+    setIsClient(true);
+
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ 
         x: (e.clientX / window.innerWidth) * 100,
@@ -148,34 +152,36 @@ export default function AboutPage() {
       />
 
       {/* Animated Background Particles */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        {Array.from({ length: 8 }).map((_, i) => (
-          <motion.div
-            key={`bg-particle-${i}`}
-            className="absolute w-1 h-1 bg-acid-green/30 rounded-full"
-            initial={{
-              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200),
-              y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800),
-            }}
-            animate={{
-              x: [
-                Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200),
-                Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200)
-              ],
-              y: [
-                Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800),
-                Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800)
-              ],
-              opacity: [0.2, 0.8, 0.2]
-            }}
-            transition={{
-              duration: Math.random() * 15 + 10,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
-        ))}
-      </div>
+      {isClient && (
+        <div className="fixed inset-0 z-0 pointer-events-none">
+          {Array.from({ length: 8 }).map((_, i) => (
+            <motion.div
+              key={`bg-particle-${i}`}
+              className="absolute w-1 h-1 bg-acid-green/30 rounded-full"
+              initial={{
+                x: Math.random() * window.innerWidth,
+                y: Math.random() * window.innerHeight,
+              }}
+              animate={{
+                x: [
+                  Math.random() * window.innerWidth,
+                  Math.random() * window.innerWidth
+                ],
+                y: [
+                  Math.random() * window.innerHeight,
+                  Math.random() * window.innerHeight
+                ],
+                opacity: [0.2, 0.8, 0.2]
+              }}
+              transition={{
+                duration: Math.random() * 15 + 10,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+          ))}
+        </div>
+      )}
 
       {/* Hero Section */}
       <section className="relative z-10 pt-32 pb-20 px-4 min-h-screen flex items-center">

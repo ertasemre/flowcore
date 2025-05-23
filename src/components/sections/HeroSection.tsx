@@ -12,8 +12,12 @@ const HeroSection = () => {
   const particlesRef = useRef<HTMLDivElement>(null);
   const [particles, setParticles] = useState<React.ReactElement[]>([]);
   const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    // Set client-side flag
+    setIsClient(true);
+    
     // Enhanced mouse tracking for more interactive effects
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ 
@@ -26,8 +30,10 @@ const HeroSection = () => {
       window.addEventListener('mousemove', handleMouseMove);
     }
 
-    // Enhanced particles with better variety
+    // Enhanced particles with better variety - only on client
     const createParticles = () => {
+      if (typeof window === 'undefined') return;
+      
       const particleElements = Array.from({ length: 15 }, (_, i) => (
         <motion.div
           key={`particle-${i}`}
@@ -38,21 +44,21 @@ const HeroSection = () => {
             backgroundColor: i % 4 === 0 ? '#39ff14' : i % 4 === 1 ? '#00c3ff' : i % 4 === 2 ? '#9d00ff' : '#ff0080'
           }}
           initial={{
-            x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200),
-            y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800),
+            x: Math.random() * window.innerWidth,
+            y: Math.random() * window.innerHeight,
             opacity: 0,
             scale: 0
           }}
           animate={{
             x: [
-              Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200),
-              Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200),
-              Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200)
+              Math.random() * window.innerWidth,
+              Math.random() * window.innerWidth,
+              Math.random() * window.innerWidth
             ],
             y: [
-              Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800),
-              Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800),
-              Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800)
+              Math.random() * window.innerHeight,
+              Math.random() * window.innerHeight,
+              Math.random() * window.innerHeight
             ],
             opacity: [0, 0.8, 0.4, 0.8, 0],
             scale: [0, 1, 0.7, 1, 0]
@@ -195,7 +201,7 @@ const HeroSection = () => {
         {particles}
         
         {/* Additional floating elements */}
-        {Array.from({ length: 6 }).map((_, i) => (
+        {isClient && Array.from({ length: 6 }).map((_, i) => (
           <motion.div
             key={`float-${i}`}
             className="absolute text-xl font-mono select-none pointer-events-none"
@@ -205,18 +211,18 @@ const HeroSection = () => {
               opacity: 0.3
             }}
             initial={{
-              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200),
-              y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800),
+              x: Math.random() * window.innerWidth,
+              y: Math.random() * window.innerHeight,
               rotate: 0
             }}
             animate={{
               x: [
-                Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200),
-                Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200)
+                Math.random() * window.innerWidth,
+                Math.random() * window.innerWidth
               ],
               y: [
-                Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800),
-                Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800)
+                Math.random() * window.innerHeight,
+                Math.random() * window.innerHeight
               ],
               rotate: 360,
               opacity: [0.1, 0.4, 0.1]
