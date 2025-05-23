@@ -13,9 +13,10 @@ const HeroSection = () => {
   const [particles, setParticles] = useState<React.ReactElement[]>([]);
   const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
   const [isClient, setIsClient] = useState(false);
+  const [particlesLoaded, setParticlesLoaded] = useState(false);
 
   useEffect(() => {
-    // Set client-side flag
+    // Set client-side flag with delay for smooth loading
     setIsClient(true);
     
     // Enhanced mouse tracking for more interactive effects
@@ -30,18 +31,19 @@ const HeroSection = () => {
       window.addEventListener('mousemove', handleMouseMove);
     }
 
-    // Enhanced particles with better variety - only on client
+    // Enhanced particles with better variety - only on client with delay
     const createParticles = () => {
       if (typeof window === 'undefined') return;
       
-      const particleElements = Array.from({ length: 15 }, (_, i) => (
+      // Reduced particle count for better performance
+      const particleElements = Array.from({ length: 8 }, (_, i) => (
         <motion.div
           key={`particle-${i}`}
           className="absolute rounded-full"
           style={{
-            width: Math.random() * 3 + 1,
-            height: Math.random() * 3 + 1,
-            backgroundColor: i % 4 === 0 ? '#39ff14' : i % 4 === 1 ? '#00c3ff' : i % 4 === 2 ? '#9d00ff' : '#ff0080'
+            width: Math.random() * 2 + 1,
+            height: Math.random() * 2 + 1,
+            backgroundColor: i % 3 === 0 ? '#39ff14' : i % 3 === 1 ? '#00c3ff' : '#9d00ff'
           }}
           initial={{
             x: Math.random() * window.innerWidth,
@@ -52,31 +54,36 @@ const HeroSection = () => {
           animate={{
             x: [
               Math.random() * window.innerWidth,
-              Math.random() * window.innerWidth,
               Math.random() * window.innerWidth
             ],
             y: [
               Math.random() * window.innerHeight,
-              Math.random() * window.innerHeight,
               Math.random() * window.innerHeight
             ],
-            opacity: [0, 0.8, 0.4, 0.8, 0],
-            scale: [0, 1, 0.7, 1, 0]
+            opacity: [0, 0.6, 0.3, 0.6, 0],
+            scale: [0, 1, 0.8, 1, 0]
           }}
           transition={{
-            duration: Math.random() * 8 + 6,
+            duration: Math.random() * 10 + 8,
             repeat: Infinity,
-            delay: Math.random() * 3,
+            delay: Math.random() * 2,
             ease: "easeInOut"
           }}
         />
       ));
       setParticles(particleElements);
+      
+      // Smooth particles loading
+      setTimeout(() => {
+        setParticlesLoaded(true);
+      }, 1000);
     };
 
-    createParticles();
+    // Delay particle creation for smooth loading
+    const timer = setTimeout(createParticles, 500);
 
     return () => {
+      clearTimeout(timer);
       if (typeof window !== 'undefined') {
         window.removeEventListener('mousemove', handleMouseMove);
       }
@@ -197,23 +204,30 @@ const HeroSection = () => {
       </div>
 
       {/* Enhanced Floating Particles */}
-      <div ref={particlesRef} className="absolute inset-0 pointer-events-none overflow-hidden">
+      <motion.div 
+        ref={particlesRef} 
+        className="absolute inset-0 pointer-events-none overflow-hidden"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: particlesLoaded ? 1 : 0 }}
+        transition={{ duration: 1.5, ease: "easeInOut" }}
+      >
         {particles}
         
-        {/* Additional floating elements */}
-        {isClient && Array.from({ length: 6 }).map((_, i) => (
+        {/* Additional floating elements - reduced count */}
+        {isClient && particlesLoaded && Array.from({ length: 3 }).map((_, i) => (
           <motion.div
             key={`float-${i}`}
-            className="absolute text-xl font-mono select-none pointer-events-none"
+            className="absolute text-lg font-mono select-none pointer-events-none"
             style={{
               color: i % 3 === 0 ? '#39ff14' : i % 3 === 1 ? '#00c3ff' : '#9d00ff',
               filter: 'blur(1px)',
-              opacity: 0.3
+              opacity: 0.2
             }}
             initial={{
               x: Math.random() * window.innerWidth,
               y: Math.random() * window.innerHeight,
-              rotate: 0
+              rotate: 0,
+              opacity: 0
             }}
             animate={{
               x: [
@@ -225,35 +239,40 @@ const HeroSection = () => {
                 Math.random() * window.innerHeight
               ],
               rotate: 360,
-              opacity: [0.1, 0.4, 0.1]
+              opacity: [0, 0.2, 0]
             }}
             transition={{
-              duration: Math.random() * 25 + 20,
+              duration: Math.random() * 30 + 25,
               repeat: Infinity,
-              delay: Math.random() * 5,
+              delay: Math.random() * 3 + i,
               ease: "linear"
             }}
           >
-            {['◆', '◇', '●', '○', '▲', '△'][i]}
+            {['◆', '○', '△'][i]}
           </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       {/* Enhanced Gradient Overlays with more dynamic movement */}
       <motion.div 
         className="absolute inset-0"
-        animate={{
+        initial={{ opacity: 0 }}
+        animate={{ 
+          opacity: 1,
           background: [
-            'radial-gradient(circle at 20% 80%, rgba(57,255,20,0.06) 0%, transparent 70%)',
-            'radial-gradient(circle at 80% 20%, rgba(0,195,255,0.06) 0%, transparent 70%)',
-            'radial-gradient(circle at 50% 50%, rgba(157,0,255,0.04) 0%, transparent 70%)',
-            'radial-gradient(circle at 30% 30%, rgba(255,0,128,0.05) 0%, transparent 70%)'
+            'radial-gradient(circle at 20% 80%, rgba(57,255,20,0.04) 0%, transparent 70%)',
+            'radial-gradient(circle at 80% 20%, rgba(0,195,255,0.04) 0%, transparent 70%)',
+            'radial-gradient(circle at 50% 50%, rgba(157,0,255,0.03) 0%, transparent 70%)',
+            'radial-gradient(circle at 30% 30%, rgba(57,255,20,0.04) 0%, transparent 70%)'
           ]
         }}
         transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "easeInOut"
+          opacity: { duration: 2, delay: 1 },
+          background: {
+            duration: 25,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }
         }}
       />
 
