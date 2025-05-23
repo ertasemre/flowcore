@@ -1,3 +1,31 @@
+# Flowcore - Underground Electronic Music Collective
+
+A modern, performance-optimized website for the Flowcore underground electronic music collective.
+
+## 🎵 Features
+
+- **Interactive Homepage** with animated particles and GSAP effects
+- **Artist Profiles** with real photos and SoundCloud integration
+- **Event Management** with Bugece.co ticketing links
+- **Responsive Design** optimized for all devices
+- **Contact Form** with Lorem Ipsum FAQ
+- **Performance Optimized** for smooth scrolling
+
+## 🛠️ Tech Stack
+
+- Next.js 15.3.2 with App Router
+- React 19 & TypeScript 5
+- Tailwind CSS 3.4.1
+- Framer Motion & GSAP animations
+- Three.js & Howler.js integration
+
+## 🚀 Performance
+
+Optimized for 60 FPS animations and smooth scrolling experience.
+
+---
+Last updated: 2025-05-23 - Contact page enhanced with YouTube link update
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
