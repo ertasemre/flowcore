@@ -36,14 +36,15 @@ const HeroSection = () => {
       if (typeof window === 'undefined') return;
       
       // Reduced particle count for better performance
-      const particleElements = Array.from({ length: 8 }, (_, i) => (
+      const particleElements = Array.from({ length: 5 }, (_, i) => (
         <motion.div
           key={`particle-${i}`}
           className="absolute rounded-full"
           style={{
-            width: Math.random() * 2 + 1,
-            height: Math.random() * 2 + 1,
-            backgroundColor: i % 3 === 0 ? '#39ff14' : i % 3 === 1 ? '#00c3ff' : '#9d00ff'
+            width: 1.5,
+            height: 1.5,
+            backgroundColor: i % 2 === 0 ? '#39ff14' : '#00c3ff',
+            willChange: 'transform'
           }}
           initial={{
             x: Math.random() * window.innerWidth,
@@ -60,14 +61,14 @@ const HeroSection = () => {
               Math.random() * window.innerHeight,
               Math.random() * window.innerHeight
             ],
-            opacity: [0, 0.6, 0.3, 0.6, 0],
+            opacity: [0, 0.4, 0.2, 0.4, 0],
             scale: [0, 1, 0.8, 1, 0]
           }}
           transition={{
-            duration: Math.random() * 10 + 8,
+            duration: 15 + i * 3,
             repeat: Infinity,
-            delay: Math.random() * 2,
-            ease: "easeInOut"
+            delay: i * 0.5,
+            ease: "linear"
           }}
         />
       ));
@@ -76,11 +77,11 @@ const HeroSection = () => {
       // Smooth particles loading
       setTimeout(() => {
         setParticlesLoaded(true);
-      }, 1000);
+      }, 500);
     };
 
     // Delay particle creation for smooth loading
-    const timer = setTimeout(createParticles, 500);
+    const timer = setTimeout(createParticles, 300);
 
     return () => {
       clearTimeout(timer);
@@ -92,81 +93,76 @@ const HeroSection = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Enhanced logo animation with more dramatic entrance
+      // Simplified logo animation for better performance
       const logoTimeline = gsap.timeline();
       
       logoTimeline
         .fromTo(logoRef.current, 
           { 
             scale: 0,
-            rotation: -180,
-            opacity: 0,
-            filter: 'blur(15px)'
+            rotation: -90,
+            opacity: 0
           },
           { 
             scale: 1,
             rotation: 0,
             opacity: 1,
-            filter: 'blur(0px)',
-            duration: 2.5,
-            ease: "back.out(2)",
-            delay: 0.5
+            duration: 1.5,
+            ease: "back.out(1.7)",
+            delay: 0.3
           }
         )
         .to(logoRef.current, {
-          scale: 1.1,
-          duration: 0.3,
+          scale: 1.05,
+          duration: 0.2,
           ease: "power2.out"
         })
         .to(logoRef.current, {
           scale: 1,
-          duration: 0.3,
+          duration: 0.2,
           ease: "power2.out"
         });
 
-      // Enhanced text animations with wave effect
+      // Simplified text animations
       gsap.fromTo(textRef.current?.children || [], 
         { 
-          y: 80,
+          y: 50,
           opacity: 0,
-          filter: 'blur(8px)',
-          scale: 0.8
+          scale: 0.9
         },
         { 
           y: 0,
           opacity: 1,
-          filter: 'blur(0px)',
           scale: 1,
-          duration: 1.5,
-          stagger: 0.3,
-          delay: 2,
-          ease: "power3.out"
+          duration: 1,
+          stagger: 0.2,
+          delay: 1.5,
+          ease: "power2.out"
         }
       );
 
-      // Enhanced logo breathing with subtle rotation
+      // Simplified logo breathing
       gsap.to(logoRef.current, {
-        scale: 1.05,
-        rotation: 5,
-        duration: 4,
+        scale: 1.03,
+        duration: 6,
         repeat: -1,
         yoyo: true,
-        ease: "power2.inOut",
-        delay: 4
+        ease: "power1.inOut",
+        delay: 3
       });
 
-      // Background pulse with color shifts
+      // Simplified background pulse
       const bgTimeline = gsap.timeline({ repeat: -1 });
       bgTimeline
         .to('.cyber-grid', {
-          opacity: 0.3,
-          duration: 3,
-          ease: "power2.inOut"
+          opacity: 0.2,
+          duration: 5,
+          ease: "power1.inOut"
         })
         .to('.cyber-grid', {
           opacity: 0.1,
-          duration: 3,
-          ease: "power2.inOut"
+          duration: 5,
+          ease: "power1.inOut"
         });
 
     }, heroRef);
@@ -182,25 +178,9 @@ const HeroSection = () => {
         background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(57,255,20,0.03) 0%, transparent 60%)`
       }}
     >
-      {/* Enhanced Background Grid with dynamic effects */}
-      <div className="absolute inset-0 cyber-grid opacity-15">
+      {/* Simplified Background Grid */}
+      <div className="absolute inset-0 cyber-grid opacity-10">
         <div className="scanner-line"></div>
-        <motion.div 
-          className="absolute inset-0"
-          animate={{
-            background: [
-              'linear-gradient(45deg, transparent 30%, rgba(57,255,20,0.1) 50%, transparent 70%)',
-              'linear-gradient(45deg, transparent 70%, rgba(0,195,255,0.1) 50%, transparent 30%)',
-              'linear-gradient(45deg, transparent 30%, rgba(157,0,255,0.1) 50%, transparent 70%)',
-              'linear-gradient(45deg, transparent 70%, rgba(255,0,128,0.1) 50%, transparent 30%)'
-            ]
-          }}
-          transition={{
-            duration: 16,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
       </div>
 
       {/* Enhanced Floating Particles */}
@@ -212,69 +192,7 @@ const HeroSection = () => {
         transition={{ duration: 1.5, ease: "easeInOut" }}
       >
         {particles}
-        
-        {/* Additional floating elements - reduced count */}
-        {isClient && particlesLoaded && Array.from({ length: 3 }).map((_, i) => (
-          <motion.div
-            key={`float-${i}`}
-            className="absolute text-lg font-mono select-none pointer-events-none"
-            style={{
-              color: i % 3 === 0 ? '#39ff14' : i % 3 === 1 ? '#00c3ff' : '#9d00ff',
-              filter: 'blur(1px)',
-              opacity: 0.2
-            }}
-            initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
-              rotate: 0,
-              opacity: 0
-            }}
-            animate={{
-              x: [
-                Math.random() * window.innerWidth,
-                Math.random() * window.innerWidth
-              ],
-              y: [
-                Math.random() * window.innerHeight,
-                Math.random() * window.innerHeight
-              ],
-              rotate: 360,
-              opacity: [0, 0.2, 0]
-            }}
-            transition={{
-              duration: Math.random() * 30 + 25,
-              repeat: Infinity,
-              delay: Math.random() * 3 + i,
-              ease: "linear"
-            }}
-          >
-            {['◆', '○', '△'][i]}
-          </motion.div>
-        ))}
       </motion.div>
-
-      {/* Enhanced Gradient Overlays with more dynamic movement */}
-      <motion.div 
-        className="absolute inset-0"
-        initial={{ opacity: 0 }}
-        animate={{ 
-          opacity: 1,
-          background: [
-            'radial-gradient(circle at 20% 80%, rgba(57,255,20,0.04) 0%, transparent 70%)',
-            'radial-gradient(circle at 80% 20%, rgba(0,195,255,0.04) 0%, transparent 70%)',
-            'radial-gradient(circle at 50% 50%, rgba(157,0,255,0.03) 0%, transparent 70%)',
-            'radial-gradient(circle at 30% 30%, rgba(57,255,20,0.04) 0%, transparent 70%)'
-          ]
-        }}
-        transition={{
-          opacity: { duration: 2, delay: 1 },
-          background: {
-            duration: 25,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }
-        }}
-      />
 
       {/* Hero Content */}
       <div className="relative z-10 text-center px-4 sm:px-6 max-w-6xl mx-auto w-full">
@@ -304,45 +222,17 @@ const HeroSection = () => {
               priority
             />
             
-            {/* Enhanced multiple glowing rings */}
+            {/* Simplified glowing ring */}
             <motion.div 
-              className="absolute inset-[-25px] rounded-full border border-acid-green/20"
+              className="absolute inset-[-20px] rounded-full border border-acid-green/20"
               animate={{ 
-                scale: [1, 1.15, 1],
-                opacity: [0.4, 0.1, 0.4],
-                rotate: [0, 360]
-              }}
-              transition={{ 
-                duration: 8, 
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-            <motion.div 
-              className="absolute inset-[-15px] rounded-full border border-cyber-blue/15"
-              animate={{ 
-                scale: [1.1, 0.9, 1.1],
-                opacity: [0.2, 0.5, 0.2],
-                rotate: [360, 0]
+                scale: [1, 1.1, 1],
+                opacity: [0.3, 0.1, 0.3]
               }}
               transition={{ 
                 duration: 6, 
                 repeat: Infinity,
-                ease: "easeInOut",
-                delay: 1
-              }}
-            />
-            <motion.div 
-              className="absolute inset-[-35px] rounded-full border border-rave-purple/10"
-              animate={{ 
-                scale: [0.9, 1.2, 0.9],
-                opacity: [0.1, 0.3, 0.1]
-              }}
-              transition={{ 
-                duration: 12, 
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 2
+                ease: "linear"
               }}
             />
           </div>

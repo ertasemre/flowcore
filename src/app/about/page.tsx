@@ -154,10 +154,10 @@ export default function AboutPage() {
       {/* Animated Background Particles */}
       {isClient && (
         <div className="fixed inset-0 z-0 pointer-events-none">
-          {Array.from({ length: 8 }).map((_, i) => (
+          {Array.from({ length: 4 }).map((_, i) => (
             <motion.div
               key={`bg-particle-${i}`}
-              className="absolute w-1 h-1 bg-acid-green/30 rounded-full"
+              className="absolute w-0.5 h-0.5 bg-acid-green/20 rounded-full"
               initial={{
                 x: Math.random() * window.innerWidth,
                 y: Math.random() * window.innerHeight,
@@ -171,13 +171,14 @@ export default function AboutPage() {
                   Math.random() * window.innerHeight,
                   Math.random() * window.innerHeight
                 ],
-                opacity: [0.2, 0.8, 0.2]
+                opacity: [0.1, 0.4, 0.1]
               }}
               transition={{
-                duration: Math.random() * 15 + 10,
+                duration: 20 + i * 5,
                 repeat: Infinity,
-                ease: "easeInOut"
+                ease: "linear"
               }}
+              style={{ willChange: 'transform' }}
             />
           ))}
         </div>

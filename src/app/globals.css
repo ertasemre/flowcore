@@ -140,3 +140,8 @@ body {
   background: linear-gradient(to bottom, transparent, #39ff14, transparent);
   animation: scan 2s linear infinite;
 }
+
+@keyframes scan {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
