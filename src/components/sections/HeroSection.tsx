@@ -12,13 +12,9 @@ const HeroSection = () => {
   const particlesRef = useRef<HTMLDivElement>(null);
   const [particles, setParticles] = useState<React.ReactElement[]>([]);
   const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
-  const [isClient, setIsClient] = useState(false);
   const [particlesLoaded, setParticlesLoaded] = useState(false);
 
   useEffect(() => {
-    // Set client-side flag with delay for smooth loading
-    setIsClient(true);
-    
     // Enhanced mouse tracking for more interactive effects
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ 
