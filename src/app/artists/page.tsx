@@ -17,14 +17,14 @@ const artists = [
     realName: 'Alican',
     genre: 'Afro House / Psytrance',
     description: 'Müzik kariyerine genç yaşta başlayan Alican, çeşitli enstrümanlarla ilgilenmiş ve 2019\'da müzik prodüksiyonuna yönelmiştir. Afro House ile başladığı yolculuğu, derin ritimleri ve etkileyici melodileriyle psytrance\'e evrilmiştir. İstanbul\'da çeşitli etkinliklerde performans sergilemektedir.',
-    soundcloud: 'https://soundcloud.com/allican',
+    soundcloud: 'https://soundcloud.com/allicanmusic',
     image: '/artists/allican.jpg',
   },
   {
     name: 'FORMAL',
     genre: 'Hard Techno / Acidcore / Alternatif Dans Müziği',
     description: '2019\'dan beri DJ\'lik yapan Formal, geniş bir müzik arşivine sahiptir ve setlerinde alternatif dans müziğinden sert ritimlere kadar geniş bir yelpazeyi yansıtır. Elektronik müziğe olan tutkusu 2010\'lara dayanmaktadır.',
-    soundcloud: 'https://soundcloud.com/formal',
+    soundcloud: 'https://soundcloud.com/hfrml',
     image: '/artists/formal.jpg',
   },
   {
