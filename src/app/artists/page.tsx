@@ -140,17 +140,16 @@ export default function ArtistsPage() {
           >
             <div className="bg-flowcore-black/50 backdrop-blur-md border border-silver/20 rounded-lg p-8 max-w-2xl mx-auto">
               <h3 className="text-2xl font-orbitron font-bold text-pure-white mb-4">
-                Kolektife Katıl
+                Join Us
               </h3>
               <p className="text-light-text/80 font-mono mb-6">
-                Underground elektronik müzik sahnesinin bir parçası olmak istiyorsan, bizimle iletişime geç.
-              </p>
+              If you feel that your vibe matches ours, let us know.              </p>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="neon-button px-8 py-4 text-lg font-mono tracking-wider uppercase"
               >
-                İletişime Geç
+                CONTACT
               </motion.button>
             </div>
           </motion.div>

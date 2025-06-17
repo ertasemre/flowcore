@@ -6,47 +6,56 @@ import { useRef, useEffect, useState } from 'react';
 
 const storyChapters = [
   {
-    id: 'genesis',
-    title: 'GENESIS',
-    subtitle: 'The Beginning',
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    year: '2024',
+    id: 'first-pulse',
+    title: 'FIRST PULSE',
+    subtitle: 'About Us',
+    content: 'Flowcore Collective started the way real things do—between friends. Under open skies, in long conversations after festivals, and over shared complaints that quietly turned into possibilities. We were a group of ravers, artists, and weirdos who kept ending up at the same parties, the same dancefloors, the same corners of the woods, renting houses and building corners of joy.',
+    year: 'Beginning',
     color: 'pure-white',
-    visual: 'city'
+    visual: 'collective'
   },
   {
-    id: 'awakening',
-    title: 'AWAKENING',
-    subtitle: 'The Realization',
-    content: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    year: '2024',
+    id: 'the-spark',
+    title: 'THE SPARK',
+    subtitle: 'The Question',
+    content: 'Some of us loved to complain. Others loved to listen. One day, after yet another beautiful, chaotic festival, we asked ourselves: "Why don\'t we make our own?" Not the world\'s hardest question. Not a plan to save the universe (maybe?). Just a simple thought that felt right. That spark became a plan. The plan became a portal.',
+    year: '2023',
     color: 'silver',
     visual: 'sound'
   },
   {
-    id: 'collective',
-    title: 'COLLECTIVE',
-    subtitle: 'Unity in Diversity',
-    content: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt.',
-    year: '2024',
+    id: 'enter-the-flow',
+    title: 'ENTER THE FLOW',
+    subtitle: 'Chapter 1',
+    content: 'We named it Enter The Flow because we wanted it to serve our dream — the first chapter of our first festival. A quiet beginning with a loud dream: one day. We opened our first portal. The journey had officially begun.',
+    year: '7 Oct 2023',
     color: 'light-text',
-    visual: 'collective'
+    visual: 'city'
   },
   {
-    id: 'underground',
-    title: 'UNDERGROUND',
-    subtitle: 'Beneath the Surface',
-    content: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.',
-    year: '2024',
+    id: 'urban-fusion',
+    title: 'URBAN FUSION',
+    subtitle: 'Creative Convergence',
+    content: 'We opened the season after summer with Urban Fusion. Till now, within the collective, this is one of the events we love the most. With the Vovzspace creative people, it was a blessed environment. It reminded us what we\'re capable of when good energy and creativity meet.',
+    year: '14 Sep 2024',
     color: 'text-gray',
     visual: 'underground'
   },
   {
-    id: 'present',
-    title: 'PRESENT',
-    subtitle: 'Here and Now',
-    content: 'Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio.',
-    year: '2024-∞',
+    id: 'kanzen-chaos',
+    title: 'KANZEN CHAOS',
+    subtitle: 'Anime Universe',
+    content: 'We let people get into the anime vibe and did the Kanzen Chaos event. Each artist had their anime universe in the background. We enjoyed this playground pretty much! It was fun, weird, and full of surprises — just how we like it.',
+    year: '30 Nov 2024',
+    color: 'silver',
+    visual: 'sound'
+  },
+  {
+    id: 'slaycore',
+    title: 'SLAYCORE',
+    subtitle: 'Flowcore at Sahika',
+    content: 'Flowcore finally appeared in the scene more! In the middle of Taksim, Sahika opened new possibilities for us. It was a super nice way of greeting 2025 — cozy, energetic, and full of flow.',
+    year: '11 Jan 2025',
     color: 'pure-white',
     visual: 'present'
   }
@@ -243,7 +252,7 @@ export default function AboutPage() {
                   ease: "easeInOut"
                 }}
               >
-                Lorem ipsum dolor sit amet consectetur adipiscing elit
+                We are individuals on our own paths of growth, some of us loud, some of us listening, but when we gather, something magic happens.
               </motion.p>
             </motion.div>
           </motion.div>
@@ -379,7 +388,7 @@ export default function AboutPage() {
           
           <div className="relative z-10">
             <h2 className="text-4xl md:text-6xl font-orbitron font-black text-pure-white mb-8">
-              The Future
+              Our Playground
             </h2>
             
             <motion.p 
@@ -393,11 +402,11 @@ export default function AboutPage() {
                 ease: "easeInOut"
               }}
             >
-              &quot;We are not an event. We are the event.&quot;
+              &quot;Flowcore is our playground. For experimentation, for collaboration, for building spaces where the unheard can be loud.&quot;
             </motion.p>
             
             <p className="text-lg text-light-text/80 font-mono leading-relaxed max-w-3xl mx-auto">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+              The portal became Flowcore. A space where friends become artists, conversations become experiences, and every gathering opens new possibilities. This is just the beginning.
             </p>
           </div>
         </motion.div>
