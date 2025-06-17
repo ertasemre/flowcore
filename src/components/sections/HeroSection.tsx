@@ -307,25 +307,25 @@ const HeroSection = () => {
         {/* Event Announcement Card */}
         <motion.div 
           className="mt-16 md:mt-20 max-w-5xl mx-auto relative overflow-hidden"
-          initial={{ opacity: 0, y: 50, scale: 0.9 }}
+          initial={{ opacity: 0, y: 30, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ delay: 3.5, duration: 1.2, ease: "easeOut" }}
+          transition={{ delay: 2, duration: 0.8, ease: "easeOut" }}
         >
           <motion.div
-            className="relative rounded-2xl overflow-hidden bg-flowcore-black/60 backdrop-blur-md border border-silver/40 hover:border-light-text/60 transition-all duration-500 group"
+            className="relative rounded-2xl overflow-hidden bg-flowcore-black/60 backdrop-blur-md border border-silver/40 transition-all duration-300 group"
             whileHover={{
-              scale: 1.01,
-              boxShadow: "0 25px 80px rgba(0, 0, 0, 0.6), 0 0 50px rgba(255, 255, 255, 0.1)",
-              transition: { duration: 0.4 }
+              borderColor: "rgba(204, 204, 204, 0.7)",
+              boxShadow: "0 20px 60px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 255, 255, 0.08)",
+              transition: { duration: 0.3 }
             }}
           >
             {/* Header */}
             <div className="relative z-20 p-4 sm:p-6 border-b border-silver/20 bg-flowcore-black/80 backdrop-blur-sm">
               <div className="flex items-center justify-between">
                 <motion.div 
-                  className="flex items-center gap-3"
+                  className="flex items-center"
                   animate={{
-                    opacity: [0.8, 1, 0.8]
+                    opacity: [0.9, 1, 0.9]
                   }}
                   transition={{
                     duration: 2.5,
@@ -333,19 +333,18 @@ const HeroSection = () => {
                     ease: "easeInOut"
                   }}
                 >
-                  <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
-                  <span className="text-xs sm:text-sm font-cs-felice text-light-text/80 uppercase tracking-cs-wider">
+                  <span className="text-xs sm:text-sm font-cs-felice text-light-text uppercase tracking-cs-wider">
                     NEXT EVENT
                   </span>
                 </motion.div>
                 
                 <motion.div 
-                  className="text-xs sm:text-sm font-cs-felice text-silver/80 uppercase tracking-cs-wider"
+                  className="text-xs sm:text-sm font-cs-felice text-silver uppercase tracking-cs-wider"
                   animate={{
                     textShadow: [
-                      "0 0 5px rgba(204,204,204,0.3)",
-                      "0 0 15px rgba(204,204,204,0.6)",
-                      "0 0 5px rgba(204,204,204,0.3)"
+                      "0 0 5px rgba(204,204,204,0.4)",
+                      "0 0 15px rgba(204,204,204,0.7)",
+                      "0 0 5px rgba(204,204,204,0.4)"
                     ]
                   }}
                   transition={{
@@ -466,20 +465,15 @@ const HeroSection = () => {
               </div>
             </div>
 
-            {/* Floating border accent */}
+            {/* Subtle glow accent */}
             <motion.div
-              className="absolute inset-0 rounded-2xl border-2 border-transparent bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 pointer-events-none"
-              animate={{
-                background: [
-                  'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%)',
-                  'linear-gradient(90deg, transparent 30%, rgba(255,255,255,0.1) 80%, transparent 100%)',
-                  'linear-gradient(90deg, transparent 60%, rgba(255,255,255,0.1) 100%, transparent 100%)'
-                ]
+              className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100"
+              style={{
+                background: 'radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 70%)'
               }}
               transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "linear"
+                duration: 0.3,
+                ease: "easeInOut"
               }}
             />
           </motion.div>

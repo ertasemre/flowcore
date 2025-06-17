@@ -177,15 +177,12 @@ export default function EventsPage() {
             {filteredEvents.map((event, index) => (
               <motion.div
                 key={event.id}
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2, duration: 0.8 }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+                whileHover={{ y: -8 }}
+                className="block group relative bg-flowcore-black/50 backdrop-blur-md border border-silver/20 rounded-lg overflow-hidden hover:border-light-text/50 hover:shadow-2xl hover:shadow-light-text/20 transition-all duration-300"
               >
-                <div className="block group relative bg-flowcore-black/50 backdrop-blur-md border border-silver/20 rounded-lg overflow-hidden hover:border-light-text/50 transition-all duration-300">
-                  <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                  >
                 {/* Event Poster */}
                 <div className="relative h-64 overflow-hidden">
                   <Image
@@ -311,8 +308,6 @@ export default function EventsPage() {
                         </Link>
                       </div>
                     )}
-                  </motion.div>
-                </div>
                   </motion.div>
                 </div>
               </motion.div>
