@@ -9,6 +9,26 @@ import Masonry from 'react-masonry-css';
 
 // Mock data - in real app this would come from an API
 const eventDetails = {
+    0: {
+        id: 0,
+        title: 'OVER:FLOW',
+        date: '27 June 2025 Friday',
+        time: '22:00 - 05:00',
+        venue: 'Suma Han - 2 STAGES',
+        location: 'Karaköy, İstanbul',
+        artists: ['L\'ART CÈNE', 'ABEM', 'DUBSTRACT', 'DYLN', 'GUNSELX', 'FOLDED', 'OGIMARU', 'SARPT', 'ALL I CAN', 'SEYMEN', 'FORMAL', 'KUZEN'],
+        description: 'Get ready for 2 stages of niche underground sounds and meticulously crafted decor & visuals',
+        fullDescription: 'OVER:FLOW represents the pinnacle of Flowcore\'s vision - a multi-stage event showcasing the finest niche underground sounds. Taking over both floors of Suma Han, this event brings together a carefully curated lineup of local and international artists.\n\nThe main floor will feature deeper, more hypnotic sounds while the second stage offers more experimental and boundary-pushing performances. Each space is transformed with meticulously crafted decor and immersive visuals that complement the sonic journey.\n\nThis is more than just a party - it\'s a complete sensory experience designed to create moments of genuine connection and collective effervescence. Join us as we push the boundaries of Istanbul\'s electronic music scene.',
+        ticketUrl: 'https://bugece.co/en/event/overflow-06-27-25',
+        status: 'upcoming',
+        poster: '/events/overflow-1.jpeg',
+        ticketSources: [
+          { name: 'Bugece', price: '' },
+          { name: 'Instagram DM', price: '' }
+        ],
+        mediaItems: [
+        ]
+      },
   1: {
     id: 1,
     title: 'ROOTS OF THE FUTURE',
@@ -458,7 +478,7 @@ export default function EventDetailsPage() {
                   ? 'bg-pure-white/20 text-pure-white border border-pure-white/50' 
                   : 'bg-text-gray/20 text-text-gray border border-text-gray/50'
               }`}>
-                {event.status === 'upcoming' ? 'Yaklaşan' : 'Geçmiş'}
+                {event.status === 'upcoming' ? 'UPCOMING' : 'PAST'}
               </div>
             </motion.div>
 
@@ -485,19 +505,20 @@ export default function EventDetailsPage() {
                   </div>
                 </div>
 
-                {/* Artists */}
-                <div className="space-y-3">
-                  <p className="text-xs text-silver font-cs-felice uppercase tracking-cs-wider">
-                    Sanatçılar:
-                  </p>
-                  <div className="flex flex-wrap gap-2">
+                {/* Artists - Made More Prominent */}
+                <div className="space-y-4">
+                  <h4 className="text-lg font-orbitron font-bold text-pure-white">
+                    Artist Lineup
+                  </h4>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                     {event.artists.map((artist) => (
-                      <span
+                      <motion.span
                         key={artist}
-                        className="px-3 py-1 text-xs font-cs-felice bg-text-gray/20 text-text-gray border border-text-gray/30 rounded hover:bg-silver/20 hover:text-silver transition-colors duration-300"
+                        whileHover={{ scale: 1.05, y: -2 }}
+                        className="px-4 py-3 text-sm font-cs-felice bg-pure-white/10 text-pure-white border border-pure-white/30 rounded-lg hover:bg-pure-white/20 hover:border-pure-white/50 transition-all duration-300 text-center backdrop-blur-sm"
                       >
                         {artist}
-                      </span>
+                      </motion.span>
                     ))}
                   </div>
                 </div>
@@ -563,24 +584,26 @@ export default function EventDetailsPage() {
             </div>
           </motion.div>
 
-          {/* Media Gallery */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.9, duration: 0.8 }}
-            className="space-y-8"
-          >
-            <div className="text-center">
-              <h3 className="text-4xl font-orbitron font-bold text-pure-white mb-4">
-                Event Gallery
-              </h3>
-              <p className="text-light-text/80 font-cs-felice">
-                Photos and videos from the event
-              </p>
-            </div>
-            
-            <MediaGrid items={event.mediaItems} />
-          </motion.div>
+          {/* Media Gallery - Only show if there are media items */}
+          {event.mediaItems && event.mediaItems.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.9, duration: 0.8 }}
+              className="space-y-8"
+            >
+              <div className="text-center">
+                <h3 className="text-4xl font-orbitron font-bold text-pure-white mb-4">
+                  Event Gallery
+                </h3>
+                <p className="text-light-text/80 font-cs-felice">
+                  Photos and videos from the event
+                </p>
+              </div>
+              
+              <MediaGrid items={event.mediaItems} />
+            </motion.div>
+          )}
         </div>
       </section>
     </main>

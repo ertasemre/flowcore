@@ -654,7 +654,7 @@ const HeroSection = () => {
               
               {/* Subtle accent line */}
               <motion.div
-                className="w-24 h-0.5 bg-silver/60 mx-auto mt-6 mb-12"
+                className="w-24 h-0.5 bg-silver/60 mx-auto mt-6 mb-8"
                 initial={{ width: 0 }}
                 whileInView={{ width: 96 }}
                 viewport={{ once: true }}
@@ -663,6 +663,28 @@ const HeroSection = () => {
                   opacity: [0.6, 1, 0.6]
                 }}
               />
+              
+              {/* Our Story Button */}
+              <motion.div
+                className="mt-8 mb-24"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 2 }}
+              >
+                <motion.a
+                  href="/about"
+                  whileHover={{ 
+                    scale: 1.05,
+                    boxShadow: "0 0 20px rgba(255, 255, 255, 0.4)",
+                    transition: { duration: 0.3 }
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-block px-8 py-3 text-base md:text-lg font-cs-felice tracking-cs-wider uppercase text-light-text border-2 border-silver/50 hover:border-silver transition-all duration-300 hover:text-pure-white"
+                >
+                  Our Story
+                </motion.a>
+              </motion.div>
             </motion.div>
           </div>
         </motion.div>

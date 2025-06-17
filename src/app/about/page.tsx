@@ -408,6 +408,28 @@ export default function AboutPage() {
             <p className="text-lg text-light-text/80 font-mono leading-relaxed max-w-3xl mx-auto">
               The portal became Flowcore. A space where friends become artists, conversations become experiences, and every gathering opens new possibilities. This is just the beginning.
             </p>
+            
+            {/* Meet the Artists Button */}
+            <motion.div
+              className="mt-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+            >
+              <motion.a
+                href="/artists"
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "0 0 20px rgba(255, 255, 255, 0.4)",
+                  transition: { duration: 0.3 }
+                }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-block px-8 py-3 text-base md:text-lg font-mono tracking-wide uppercase text-light-text border-2 border-silver/50 hover:border-silver transition-all duration-300 hover:text-pure-white"
+              >
+                Meet the Artists
+              </motion.a>
+            </motion.div>
           </div>
         </motion.div>
       </div>

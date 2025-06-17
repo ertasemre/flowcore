@@ -14,7 +14,7 @@ const events = [
     time: '22:00 - 05:00',
     venue: 'Suma Han - Both Floors',
     location: 'Karaköy, İstanbul',
-    artists: ['L\'ART CENE', 'ABEM', 'DUBSTRACT', 'DYLN', 'GUNSELX', 'FOLDED', 'OGIMARU', 'SARPT', 'ALL I CAN', 'SEYMEN', 'FORMAL', 'KUZEN'],
+    artists: ['L\'ART CÈNE', 'ABEM', 'DUBSTRACT', 'DYLN', 'GUNSELX', 'FOLDED', 'OGIMARU', 'SARPT', 'ALL I CAN', 'SEYMEN', 'FORMAL', 'KUZEN'],
     description: 'Get ready for 2 stages of niche underground sounds and meticulously crafted decor & visuals',
     ticketUrl: 'https://bugece.co/en/event/overflow-06-27-25',
     status: 'upcoming',
@@ -152,9 +152,9 @@ export default function EventsPage() {
             className="flex justify-center gap-4 mb-12"
           >
             {[
-              { key: 'all', label: 'Tümü' },
-              { key: 'upcoming', label: 'Yaklaşan' },
-              { key: 'past', label: 'Geçmiş' }
+              { key: 'all', label: 'ALL' },
+              { key: 'upcoming', label: 'UPCOMING' },
+              { key: 'past', label: 'PAST' }
             ].map((filterOption) => (
               <motion.button
                 key={filterOption.key}
@@ -199,7 +199,7 @@ export default function EventsPage() {
                       ? 'bg-pure-white/20 text-pure-white border border-pure-white/50' 
                       : 'bg-text-gray/20 text-text-gray border border-text-gray/50'
                   }`}>
-                    {event.status === 'upcoming' ? 'Yaklaşan' : 'Geçmiş'}
+                    {event.status === 'upcoming' ? 'UPCOMING' : 'PAST'}
                   </div>
 
                   {/* Glitch overlay */}
@@ -280,7 +280,7 @@ export default function EventsPage() {
                           className="inline-block neon-button px-6 py-3 text-sm font-cs-felice tracking-cs-wider uppercase flex-1 text-center"
                           onClick={(e) => e.stopPropagation()}
                         >
-                          Bilet Al
+                          GET TICKETS
                         </motion.a>
                         <Link href={`/events/${event.id}`}>
                           <motion.button
@@ -288,7 +288,7 @@ export default function EventsPage() {
                             whileTap={{ scale: 0.95 }}
                             className="px-6 py-3 text-sm font-cs-felice tracking-cs-wider uppercase text-light-text border-2 border-silver/20 hover:border-silver/50 hover:text-pure-white transition-all duration-300 flex-1"
                           >
-                            Detaylar
+                            DETAILS
                           </motion.button>
                         </Link>
                       </div>
@@ -303,7 +303,7 @@ export default function EventsPage() {
                             whileTap={{ scale: 0.95 }}
                             className="px-6 py-3 text-sm font-cs-felice tracking-cs-wider uppercase text-light-text border-2 border-silver/20 hover:border-silver/50 hover:text-pure-white transition-all duration-300 flex-1"
                           >
-                            Detaylar
+                            DETAILS
                           </motion.button>
                         </Link>
                       </div>
