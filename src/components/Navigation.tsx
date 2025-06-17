@@ -9,7 +9,7 @@ import { useCart } from '@/contexts/CartContext';
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { getTotalItems, setIsCartOpen } = useCart();
+  const { } = useCart();
 
   useEffect(() => {
     const handleScroll = () => {

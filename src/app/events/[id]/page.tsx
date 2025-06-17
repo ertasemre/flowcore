@@ -58,7 +58,7 @@ interface MediaGridProps {
 }
 
 // Individual media item component
-function MediaItem({ item, index }: { item: MediaItem; index: number }) {
+function MediaItem({ item }: { item: MediaItem }) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-10%" });
   
@@ -249,7 +249,7 @@ function MediaGrid({ items }: MediaGridProps) {
 
   useEffect(() => {
     loadMoreItems();
-  }, []);
+  }, [loadMoreItems]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -284,7 +284,7 @@ function MediaGrid({ items }: MediaGridProps) {
         columnClassName="pl-4 lg:pl-6 bg-clip-padding"
       >
         {visibleItems.map((item, index) => (
-          <MediaItem key={`${item.src}-${index}`} item={item} index={index} />
+          <MediaItem key={`${item.src}-${index}`} item={item} />
         ))}
       </Masonry>
 
@@ -373,7 +373,7 @@ export default function EventDetailsPage() {
               Event Not Found
             </h1>
             <p className="text-light-text/80 font-cs-felice">
-              The event you're looking for doesn't exist.
+              The event you&apos;re looking for doesn&apos;t exist.
             </p>
           </div>
         </div>
