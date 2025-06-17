@@ -50,7 +50,7 @@ export default function ArtistsPage() {
             transition={{ duration: 1 }}
             className="text-center mb-16"
           >
-            <h1 className="text-6xl md:text-8xl font-orbitron font-black text-acid-green glitch-text mb-6" data-text="ARTISTS">
+            <h1 className="text-6xl md:text-8xl font-orbitron font-black text-pure-white glitch-text mb-6" data-text="ARTISTS">
               ARTISTS
             </h1>
           </motion.div>
@@ -63,15 +63,15 @@ export default function ArtistsPage() {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.2, duration: 0.8 }}
-                className="group relative bg-flowcore-black/50 backdrop-blur-md border border-acid-green/20 rounded-lg p-6 hover:border-cyber-blue/50 transition-all duration-300 min-h-[600px] flex flex-col"
+                className="group relative bg-flowcore-black/50 backdrop-blur-md border border-silver/20 rounded-lg p-6 hover:border-light-text/50 transition-all duration-300 min-h-[600px] flex flex-col"
               >
                 {/* Artist Image */}
-                <div className="relative w-full h-80 mb-6 bg-gradient-to-br from-rave-purple/20 to-cyber-blue/20 rounded-lg overflow-hidden">
+                <div className="relative w-full h-80 mb-6 bg-gradient-to-br from-medium-gray/20 to-light-gray/20 rounded-lg overflow-hidden">
                   <Image
                     src={artist.image}
                     alt={artist.name}
                     fill
-                    className="object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                    className="object-cover object-center transition-transform duration-300 group-hover:scale-105 grayscale group-hover:grayscale-0"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-flowcore-black/70 via-transparent to-transparent"></div>
                   
@@ -84,21 +84,21 @@ export default function ArtistsPage() {
                 {/* Artist Info */}
                 <div className="space-y-4 flex-1 flex flex-col">
                   <div>
-                    <h3 className="text-2xl font-orbitron font-bold text-acid-green">
+                    <h3 className="text-2xl font-orbitron font-bold text-pure-white">
                       {artist.name}
                     </h3>
                     {artist.realName && (
-                      <p className="text-sm text-acid-green/60 font-mono mt-1">
+                      <p className="text-sm text-light-text/60 font-mono mt-1">
                         ({artist.realName})
                       </p>
                     )}
                   </div>
                   
-                  <p className="text-sm text-cyber-blue font-mono uppercase tracking-wider leading-relaxed">
+                  <p className="text-sm text-silver font-mono uppercase tracking-wider leading-relaxed">
                     {artist.genre}
                   </p>
                   
-                  <p className="text-acid-green/80 font-mono text-sm leading-relaxed flex-1">
+                  <p className="text-light-text/80 font-mono text-sm leading-relaxed flex-1">
                     {artist.description}
                   </p>
 
@@ -118,7 +118,7 @@ export default function ArtistsPage() {
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="px-4 py-2 text-sm font-mono tracking-wider uppercase text-rave-purple border-2 border-rave-purple/50 hover:border-neon-pink hover:text-neon-pink transition-all duration-300"
+                      className="px-4 py-2 text-sm font-mono tracking-wider uppercase text-text-gray border-2 border-text-gray/50 hover:border-silver hover:text-silver transition-all duration-300"
                     >
                       Latest Set
                     </motion.button>
@@ -126,7 +126,7 @@ export default function ArtistsPage() {
                 </div>
 
                 {/* Hover Effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-acid-green/5 to-cyber-blue/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-pure-white/3 to-silver/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none"></div>
               </motion.div>
             ))}
           </div>
@@ -138,11 +138,11 @@ export default function ArtistsPage() {
             transition={{ delay: 1, duration: 1 }}
             className="mt-20 text-center"
           >
-            <div className="bg-flowcore-black/50 backdrop-blur-md border border-acid-green/20 rounded-lg p-8 max-w-2xl mx-auto">
-              <h3 className="text-2xl font-orbitron font-bold text-acid-green mb-4">
+            <div className="bg-flowcore-black/50 backdrop-blur-md border border-silver/20 rounded-lg p-8 max-w-2xl mx-auto">
+              <h3 className="text-2xl font-orbitron font-bold text-pure-white mb-4">
                 Kolektife Katıl
               </h3>
-              <p className="text-acid-green/80 font-mono mb-6">
+              <p className="text-light-text/80 font-mono mb-6">
                 Underground elektronik müzik sahnesinin bir parçası olmak istiyorsan, bizimle iletişime geç.
               </p>
               <motion.button

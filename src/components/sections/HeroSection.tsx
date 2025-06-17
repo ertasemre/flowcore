@@ -39,7 +39,7 @@ const HeroSection = () => {
           style={{
             width: 1.5,
             height: 1.5,
-            backgroundColor: i % 2 === 0 ? '#39ff14' : '#00c3ff',
+            backgroundColor: i % 2 === 0 ? '#ffffff' : '#cccccc',
             willChange: 'transform'
           }}
           initial={{
@@ -171,7 +171,7 @@ const HeroSection = () => {
       ref={heroRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-flowcore-black pt-20"
       style={{
-        background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(57,255,20,0.03) 0%, transparent 60%)`
+        background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(255,255,255,0.02) 0%, transparent 60%)`
       }}
     >
       {/* Simplified Background Grid */}
@@ -202,10 +202,10 @@ const HeroSection = () => {
             transition: { duration: 0.3, ease: "easeOut" }
           }}
           onHoverStart={() => {
-            gsap.to(logoRef.current, { filter: 'drop-shadow(0 0 30px rgba(57,255,20,0.6))', duration: 0.3 });
+            gsap.to(logoRef.current, { filter: 'drop-shadow(0 0 30px rgba(255,255,255,0.6))', duration: 0.3 });
           }}
           onHoverEnd={() => {
-            gsap.to(logoRef.current, { filter: 'drop-shadow(0 0 20px rgba(57,255,20,0.3))', duration: 0.3 });
+            gsap.to(logoRef.current, { filter: 'drop-shadow(0 0 20px rgba(255,255,255,0.3))', duration: 0.3 });
           }}
         >
           <div className="relative inline-block">
@@ -214,13 +214,13 @@ const HeroSection = () => {
               alt="Flowcore"
               width={280}
               height={280}
-              className="mx-auto filter drop-shadow-[0_0_20px_rgba(57,255,20,0.3)]"
+              className="mx-auto filter drop-shadow-[0_0_20px_rgba(255,255,255,0.3)] brightness-0 invert"
               priority
             />
             
             {/* Simplified glowing ring */}
             <motion.div 
-              className="absolute inset-[-20px] rounded-full border border-acid-green/20"
+              className="absolute inset-[-20px] rounded-full border border-silver/20"
               animate={{ 
                 scale: [1, 1.1, 1],
                 opacity: [0.3, 0.1, 0.3]
@@ -237,18 +237,18 @@ const HeroSection = () => {
         {/* Enhanced Main Text Content */}
         <div ref={textRef} className="space-y-6 md:space-y-8">
           <motion.p 
-            className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-cyber-blue font-mono tracking-wide max-w-4xl mx-auto leading-relaxed px-2"
+            className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-light-text font-cs-felice tracking-cs-wide max-w-4xl mx-auto leading-relaxed px-2"
             whileHover={{
-              color: "#39ff14",
+              color: "#ffffff",
               scale: 1.02,
-              textShadow: "0 0 15px rgba(57,255,20,0.4)",
+              textShadow: "0 0 15px rgba(255,255,255,0.4)",
               transition: { duration: 0.3 }
             }}
             animate={{
               textShadow: [
-                "0 0 5px rgba(0,195,255,0.3)",
-                "0 0 10px rgba(0,195,255,0.5)",
-                "0 0 5px rgba(0,195,255,0.3)"
+                "0 0 5px rgba(153,153,153,0.3)",
+                "0 0 10px rgba(153,153,153,0.5)",
+                "0 0 5px rgba(153,153,153,0.3)"
               ]
             }}
             transition={{
@@ -261,10 +261,10 @@ const HeroSection = () => {
           </motion.p>
 
           <motion.p 
-            className="text-base sm:text-lg md:text-xl lg:text-2xl text-acid-green/90 font-mono italic max-w-3xl mx-auto leading-relaxed px-2"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-pure-white/90 font-cs-felice italic max-w-3xl mx-auto leading-relaxed px-2"
             whileHover={{
               scale: 1.02,
-              textShadow: "0 0 20px rgba(57,255,20,0.6)",
+              textShadow: "0 0 20px rgba(255,255,255,0.6)",
               transition: { duration: 0.3 }
             }}
             animate={{
@@ -289,15 +289,15 @@ const HeroSection = () => {
             <motion.button
               whileHover={{ 
                 scale: 1.1,
-                boxShadow: "0 0 30px rgba(57, 255, 20, 0.6)",
+                boxShadow: "0 0 30px rgba(255, 255, 255, 0.6)",
                 transition: { duration: 0.3 }
               }}
               whileTap={{ scale: 0.95 }}
               animate={{
                 boxShadow: [
-                  "0 0 15px rgba(57, 255, 20, 0.3)",
-                  "0 0 25px rgba(57, 255, 20, 0.5)",
-                  "0 0 15px rgba(57, 255, 20, 0.3)"
+                  "0 0 15px rgba(255, 255, 255, 0.3)",
+                  "0 0 25px rgba(255, 255, 255, 0.5)",
+                  "0 0 15px rgba(255, 255, 255, 0.3)"
                 ]
               }}
               transition={{
@@ -305,7 +305,7 @@ const HeroSection = () => {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="neon-button px-8 sm:px-10 py-3 md:py-4 text-base md:text-lg font-mono tracking-wider uppercase w-full sm:w-auto relative overflow-hidden"
+              className="neon-button px-8 sm:px-10 py-3 md:py-4 text-base md:text-lg font-cs-felice tracking-cs-wider uppercase w-full sm:w-auto relative overflow-hidden"
             >
               <span className="relative z-10">Enter Underground</span>
               <motion.div
@@ -324,13 +324,13 @@ const HeroSection = () => {
             <motion.button
               whileHover={{ 
                 scale: 1.1, 
-                color: "#ff0080", 
-                borderColor: "#ff0080",
-                boxShadow: "0 0 25px rgba(255, 0, 128, 0.5)",
+                color: "#cccccc", 
+                borderColor: "#cccccc",
+                boxShadow: "0 0 25px rgba(204, 204, 204, 0.5)",
                 transition: { duration: 0.3 }
               }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 sm:px-10 py-3 md:py-4 text-base md:text-lg font-mono tracking-wider uppercase text-cyber-blue border-2 border-cyber-blue/50 hover:border-neon-pink transition-all duration-300 w-full sm:w-auto"
+              className="px-8 sm:px-10 py-3 md:py-4 text-base md:text-lg font-cs-felice tracking-cs-wider uppercase text-light-text border-2 border-text-gray/50 hover:border-silver transition-all duration-300 w-full sm:w-auto"
             >
               Latest Mix
             </motion.button>
@@ -339,18 +339,18 @@ const HeroSection = () => {
 
         {/* Enhanced Save The Date */}
         <motion.div 
-          className="mt-16 md:mt-20 p-6 md:p-8 bg-flowcore-black/60 backdrop-blur-md border border-acid-green/20 rounded-xl max-w-lg mx-auto hover:border-cyber-blue/40 transition-all duration-300 relative overflow-hidden"
+          className="mt-16 md:mt-20 p-6 md:p-8 bg-flowcore-black/60 backdrop-blur-md border border-silver/20 rounded-xl max-w-lg mx-auto hover:border-light-text/40 transition-all duration-300 relative overflow-hidden"
           initial={{ opacity: 0, y: 50, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ delay: 3.5, duration: 1.2, ease: "easeOut" }}
           whileHover={{
             scale: 1.05,
-            boxShadow: "0 0 35px rgba(0, 195, 255, 0.3)",
+            boxShadow: "0 0 35px rgba(153, 153, 153, 0.3)",
             transition: { duration: 0.3 }
           }}
         >
           <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-acid-green/3 via-cyber-blue/3 to-rave-purple/3 rounded-xl"
+            className="absolute inset-0 bg-gradient-to-r from-medium-gray/3 via-light-gray/3 to-text-gray/3 rounded-xl"
             animate={{
               opacity: [0.3, 0.7, 0.3],
               scale: [1, 1.02, 1]
@@ -364,7 +364,7 @@ const HeroSection = () => {
           
           <div className="relative z-10">
             <motion.p 
-              className="text-xs md:text-sm text-acid-green/60 font-mono uppercase tracking-wider mb-2 md:mb-3"
+              className="text-xs md:text-sm text-light-text/60 font-cs-felice uppercase tracking-cs-wider mb-2 md:mb-3"
               animate={{
                 opacity: [0.6, 1, 0.6]
               }}
@@ -378,12 +378,12 @@ const HeroSection = () => {
             </motion.p>
             
             <motion.h3 
-              className="text-2xl md:text-3xl font-orbitron font-bold text-acid-green mb-2"
+              className="text-2xl md:text-3xl font-orbitron font-bold text-pure-white mb-2"
               animate={{
                 textShadow: [
-                  "0 0 8px rgba(57,255,20,0.4)",
-                  "0 0 20px rgba(57,255,20,0.8)",
-                  "0 0 8px rgba(57,255,20,0.4)"
+                  "0 0 8px rgba(255,255,255,0.4)",
+                  "0 0 20px rgba(255,255,255,0.8)",
+                  "0 0 8px rgba(255,255,255,0.4)"
                 ],
                 scale: [1, 1.02, 1]
               }}
@@ -396,7 +396,7 @@ const HeroSection = () => {
               JUNE 27TH
             </motion.h3>
             
-            <p className="text-cyber-blue font-mono mb-4 text-center text-sm md:text-base">
+            <p className="text-silver font-cs-felice mb-4 text-center text-sm md:text-base">
               STAY TUNED FOR OUR<br/>
               BIGGEST EVENT YET
             </p>
@@ -404,12 +404,12 @@ const HeroSection = () => {
             <motion.button
               whileHover={{ 
                 scale: 1.05,
-                color: "#ff0080",
-                boxShadow: "0 0 20px rgba(255, 0, 128, 0.4)",
+                color: "#ffffff",
+                boxShadow: "0 0 20px rgba(255, 255, 255, 0.4)",
                 transition: { duration: 0.3 }
               }}
               whileTap={{ scale: 0.98 }}
-              className="text-sm font-mono text-rave-purple hover:text-neon-pink transition-colors duration-300 border-b border-rave-purple/50 hover:border-neon-pink pb-1 w-full text-center"
+              className="text-sm font-cs-felice text-text-gray hover:text-pure-white transition-colors duration-300 border-b border-text-gray/50 hover:border-pure-white pb-1 w-full text-center"
             >
               GET NOTIFIED →
             </motion.button>
@@ -434,9 +434,9 @@ const HeroSection = () => {
           transition: { duration: 0.3 }
         }}
       >
-        <div className="w-5 h-8 md:w-6 md:h-10 border-2 border-acid-green/30 rounded-full flex justify-center relative">
+        <div className="w-5 h-8 md:w-6 md:h-10 border-2 border-silver/30 rounded-full flex justify-center relative">
           <motion.div 
-            className="w-0.5 h-2 md:w-1 md:h-3 bg-acid-green/50 rounded-full mt-1.5 md:mt-2"
+            className="w-0.5 h-2 md:w-1 md:h-3 bg-pure-white/50 rounded-full mt-1.5 md:mt-2"
             animate={{
               y: [0, 12, 0],
               opacity: [1, 0.3, 1],

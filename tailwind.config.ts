@@ -9,26 +9,32 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Flowcore rave theme colors
-        "flowcore-black": "#0f0f0f",
-        "acid-green": "#39ff14",
-        "cyber-blue": "#00c3ff", 
-        "rave-purple": "#9d00ff",
-        "neon-pink": "#ff0080",
-        "electric-yellow": "#ffff00",
+        // Monochrome Flowcore theme colors
+        "flowcore-black": "#000000",
+        "dark-gray": "#0a0a0a", 
+        "medium-gray": "#1a1a1a",
+        "light-gray": "#2a2a2a",
+        "accent-gray": "#3a3a3a",
+        "text-gray": "#666666",
+        "light-text": "#999999",
+        "silver": "#cccccc",
+        "light-silver": "#e5e5e5",
+        "pure-white": "#ffffff",
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
       fontFamily: {
         'orbitron': ['Orbitron', 'monospace'],
-        'mono': ['IBM Plex Mono', 'monospace'],
-        'glitch': ['Courier New', 'monospace'], // Fallback until custom fonts
+        'cs-felice': ['CS Felice Mono', 'JetBrains Mono', 'Fira Code', 'Courier', 'monospace'],
+        'mono': ['JetBrains Mono', 'Fira Code', 'Courier', 'monospace'],
+        'jetbrains': ['JetBrains Mono', 'monospace'],
       },
       animation: {
         'glitch': 'glitch 0.3s ease-in-out infinite alternate',
-        'pulse-neon': 'pulse-neon 2s ease-in-out infinite alternate',
+        'pulse-mono': 'pulse-mono 2s ease-in-out infinite alternate',
         'float': 'float 3s ease-in-out infinite',
         'scan': 'scan 2s linear infinite',
+        'glow': 'glow 3s ease-in-out infinite alternate',
       },
       keyframes: {
         glitch: {
@@ -39,7 +45,7 @@ export default {
           '80%': { transform: 'translate(2px, -2px)' },
           '100%': { transform: 'translate(0)' },
         },
-        'pulse-neon': {
+        'pulse-mono': {
           '0%, 100%': { 
             textShadow: '0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor',
           },
@@ -55,13 +61,26 @@ export default {
           '0%': { transform: 'translateX(-100%)' },
           '100%': { transform: 'translateX(100vw)' },
         },
+        glow: {
+          '0%, 100%': { 
+            boxShadow: '0 0 5px rgba(255, 255, 255, 0.1), 0 0 10px rgba(255, 255, 255, 0.1)',
+          },
+          '50%': { 
+            boxShadow: '0 0 20px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.2)',
+          },
+        },
       },
       backgroundImage: {
-        'rave-gradient': 'linear-gradient(45deg, #39ff14, #00c3ff, #9d00ff, #ff0080)',
-        'cyber-grid': 'linear-gradient(rgba(57, 255, 20, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(57, 255, 20, 0.1) 1px, transparent 1px)',
+        'mono-gradient': 'linear-gradient(45deg, #1a1a1a, #2a2a2a, #3a3a3a, #666666)',
+        'cyber-grid': 'linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px)',
       },
       backdropBlur: {
-        'rave': '20px',
+        'mono': '20px',
+      },
+      letterSpacing: {
+        'cs-wide': '0.08em',
+        'cs-wider': '0.12em',
+        'cs-widest': '0.16em',
       },
     },
   },

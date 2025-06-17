@@ -41,7 +41,7 @@ export default function ContactPage() {
           {Array.from({ length: 3 }).map((_, i) => (
             <motion.div
               key={`bg-particle-${i}`}
-              className="absolute w-0.5 h-0.5 bg-acid-green/15 rounded-full"
+              className="absolute w-0.5 h-0.5 bg-pure-white/15 rounded-full"
               initial={{
                 x: Math.random() * window.innerWidth,
                 y: Math.random() * window.innerHeight,
@@ -78,13 +78,13 @@ export default function ContactPage() {
             className="text-center mb-20"
           >
             <motion.h1 
-              className="text-7xl md:text-9xl font-orbitron font-black text-acid-green glitch-text mb-8" 
+              className="text-7xl md:text-9xl font-orbitron font-black text-pure-white glitch-text mb-8" 
               data-text="CONTACT"
               animate={{
                 textShadow: [
-                  "0 0 20px rgba(57,255,20,0.5)",
-                  "0 0 40px rgba(57,255,20,0.8)",
-                  "0 0 20px rgba(57,255,20,0.5)"
+                  "0 0 20px rgba(255,255,255,0.5)",
+                  "0 0 40px rgba(255,255,255,0.8)",
+                  "0 0 20px rgba(255,255,255,0.5)"
                 ]
               }}
               transition={{
@@ -102,11 +102,11 @@ export default function ContactPage() {
               transition={{ delay: 0.8, duration: 1 }}
               className="space-y-4"
             >
-              <p className="text-2xl md:text-3xl text-cyber-blue font-mono">
+              <p className="text-2xl md:text-3xl text-silver font-mono">
                 Get In Touch
               </p>
               <motion.p 
-                className="text-lg md:text-xl text-acid-green/80 font-mono max-w-3xl mx-auto leading-relaxed"
+                className="text-lg md:text-xl text-light-text/80 font-mono max-w-3xl mx-auto leading-relaxed"
                 animate={{
                   opacity: [0.8, 1, 0.8]
                 }}
@@ -129,9 +129,9 @@ export default function ContactPage() {
               transition={{ delay: 0.3, duration: 1.2 }}
               className="xl:col-span-2"
             >
-              <div className="bg-flowcore-black/60 backdrop-blur-md border border-acid-green/30 rounded-xl p-8 relative overflow-hidden">
+              <div className="bg-flowcore-black/60 backdrop-blur-md border border-silver/30 rounded-xl p-8 relative overflow-hidden">
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-acid-green/5 via-cyber-blue/5 to-rave-purple/5"
+                  className="absolute inset-0 bg-gradient-to-r from-pure-white/5 via-silver/5 to-light-text/5"
                   animate={{
                     opacity: [0.3, 0.7, 0.3]
                   }}
@@ -143,14 +143,14 @@ export default function ContactPage() {
                 />
                 
                 <div className="relative z-10">
-                  <h2 className="text-3xl font-orbitron font-bold text-acid-green mb-8 text-center">
+                  <h2 className="text-3xl font-orbitron font-bold text-pure-white mb-8 text-center">
                     Send Message
                   </h2>
                   
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <label htmlFor="name" className="block text-sm font-mono text-acid-green/80 mb-3 uppercase tracking-wider">
+                        <label htmlFor="name" className="block text-sm font-mono text-light-text/80 mb-3 uppercase tracking-wider">
                           Full Name
                         </label>
                         <input
@@ -160,13 +160,13 @@ export default function ContactPage() {
                           value={formData.name}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-4 bg-flowcore-black/70 border-2 border-acid-green/30 rounded-lg text-acid-green font-mono placeholder-acid-green/50 focus:border-cyber-blue focus:outline-none transition-all duration-300 focus:shadow-[0_0_20px_rgba(0,195,255,0.3)]"
+                          className="w-full px-4 py-4 bg-flowcore-black/70 border-2 border-silver/30 rounded-lg text-pure-white font-mono placeholder-light-text/50 focus:border-pure-white focus:outline-none transition-all duration-300 focus:shadow-[0_0_20px_rgba(255,255,255,0.3)]"
                           placeholder="Your Name"
                         />
                       </div>
 
                       <div>
-                        <label htmlFor="email" className="block text-sm font-mono text-acid-green/80 mb-3 uppercase tracking-wider">
+                        <label htmlFor="email" className="block text-sm font-mono text-light-text/80 mb-3 uppercase tracking-wider">
                           Email Address
                         </label>
                         <input
@@ -176,14 +176,14 @@ export default function ContactPage() {
                           value={formData.email}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-4 bg-flowcore-black/70 border-2 border-acid-green/30 rounded-lg text-acid-green font-mono placeholder-acid-green/50 focus:border-cyber-blue focus:outline-none transition-all duration-300 focus:shadow-[0_0_20px_rgba(0,195,255,0.3)]"
+                          className="w-full px-4 py-4 bg-flowcore-black/70 border-2 border-silver/30 rounded-lg text-pure-white font-mono placeholder-light-text/50 focus:border-pure-white focus:outline-none transition-all duration-300 focus:shadow-[0_0_20px_rgba(255,255,255,0.3)]"
                           placeholder="your@email.com"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label htmlFor="subject" className="block text-sm font-mono text-acid-green/80 mb-3 uppercase tracking-wider">
+                      <label htmlFor="subject" className="block text-sm font-mono text-light-text/80 mb-3 uppercase tracking-wider">
                         Subject
                       </label>
                       <select
@@ -192,20 +192,20 @@ export default function ContactPage() {
                         value={formData.subject}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-4 bg-flowcore-black/70 border-2 border-acid-green/30 rounded-lg text-acid-green font-mono focus:border-cyber-blue focus:outline-none transition-all duration-300 focus:shadow-[0_0_20px_rgba(0,195,255,0.3)]"
+                        className="w-full px-4 py-4 bg-flowcore-black/70 border-2 border-silver/30 rounded-lg text-pure-white font-mono focus:border-pure-white focus:outline-none transition-all duration-300 focus:shadow-[0_0_20px_rgba(255,255,255,0.3)]"
                       >
                         <option value="">Select Subject</option>
                         <option value="artist">Artist Application</option>
                         <option value="collaboration">Collaboration</option>
                         <option value="event">Event Organization</option>
-                        <option value="booking">Booking</option>
-                        <option value="press">Press & Media</option>
+                        <option value="booking">Booking Inquiry</option>
+                        <option value="media">Media & Press</option>
                         <option value="other">Other</option>
                       </select>
                     </div>
 
                     <div>
-                      <label htmlFor="message" className="block text-sm font-mono text-acid-green/80 mb-3 uppercase tracking-wider">
+                      <label htmlFor="message" className="block text-sm font-mono text-light-text/80 mb-3 uppercase tracking-wider">
                         Message
                       </label>
                       <textarea
@@ -214,172 +214,88 @@ export default function ContactPage() {
                         value={formData.message}
                         onChange={handleChange}
                         required
-                        rows={8}
-                        className="w-full px-4 py-4 bg-flowcore-black/70 border-2 border-acid-green/30 rounded-lg text-acid-green font-mono placeholder-acid-green/50 focus:border-cyber-blue focus:outline-none transition-all duration-300 resize-none focus:shadow-[0_0_20px_rgba(0,195,255,0.3)]"
-                        placeholder="Your message here..."
+                        rows={6}
+                        className="w-full px-4 py-4 bg-flowcore-black/70 border-2 border-silver/30 rounded-lg text-pure-white font-mono placeholder-light-text/50 focus:border-pure-white focus:outline-none transition-all duration-300 resize-none focus:shadow-[0_0_20px_rgba(255,255,255,0.3)]"
+                        placeholder="Your message..."
                       />
                     </div>
 
                     <motion.button
                       type="submit"
-                      whileHover={{ 
-                        scale: 1.02,
-                        boxShadow: "0 0 30px rgba(57, 255, 20, 0.6)",
-                        transition: { duration: 0.3 }
-                      }}
-                      whileTap={{ scale: 0.98 }}
-                      className="w-full neon-button px-8 py-5 text-lg font-mono tracking-wider uppercase relative overflow-hidden"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="neon-button w-full py-4 text-lg font-mono tracking-wider uppercase"
                     >
-                      <span className="relative z-10">Send Message</span>
-                      <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
-                        animate={{
-                          x: ['-100%', '100%']
-                        }}
-                        transition={{
-                          duration: 2.5,
-                          repeat: Infinity,
-                          ease: "linear"
-                        }}
-                      />
+                      Send Message
                     </motion.button>
                   </form>
                 </div>
               </div>
             </motion.div>
 
-            {/* Contact Info - Enhanced */}
+            {/* Contact Information */}
             <motion.div
               initial={{ opacity: 0, x: 100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.6, duration: 1.2 }}
-              className="space-y-6"
+              className="space-y-8"
             >
               {/* Direct Contact */}
-              <motion.div 
-                className="bg-flowcore-black/60 backdrop-blur-md border border-acid-green/30 rounded-xl p-6 relative overflow-hidden"
-                whileHover={{
-                  scale: 1.02,
-                  boxShadow: "0 0 25px rgba(57,255,20,0.2)",
-                  transition: { duration: 0.3 }
-                }}
-              >
+              <div className="bg-flowcore-black/60 backdrop-blur-md border border-silver/30 rounded-xl p-6 relative overflow-hidden">
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-acid-green/5 to-transparent"
+                  className="absolute inset-0 bg-gradient-to-br from-pure-white/5 to-transparent"
                   animate={{
                     opacity: [0.3, 0.6, 0.3]
                   }}
                   transition={{
-                    duration: 5,
+                    duration: 6,
                     repeat: Infinity,
                     ease: "easeInOut"
                   }}
                 />
                 
                 <div className="relative z-10">
-                  <h3 className="text-xl font-orbitron font-bold text-acid-green mb-6 flex items-center gap-2">
-                    <span className="text-2xl">📧</span>
-                    Direct Contact
+                  <h3 className="text-xl font-orbitron font-bold text-pure-white mb-6 flex items-center gap-2">
+                    <span>📧</span> Direct Contact
                   </h3>
+                  
                   <div className="space-y-4">
-                    <motion.div 
-                      className="flex items-center gap-3 p-3 bg-flowcore-black/30 rounded-lg border border-acid-green/20 hover:border-cyber-blue/50 transition-all duration-300"
-                      whileHover={{ x: 5 }}
-                    >
-                      <span className="text-cyber-blue text-lg">✉️</span>
-                      <a 
-                        href="mailto:info@flowcore.collective" 
-                        className="text-acid-green/90 font-mono hover:text-cyber-blue transition-colors"
-                      >
-                        info@flowcore.collective
-                      </a>
-                    </motion.div>
-                    <motion.div 
-                      className="flex items-center gap-3 p-3 bg-flowcore-black/30 rounded-lg border border-acid-green/20 hover:border-cyber-blue/50 transition-all duration-300"
-                      whileHover={{ x: 5 }}
-                    >
-                      <span className="text-cyber-blue text-lg">🎵</span>
-                      <a 
-                        href="mailto:booking@flowcore.collective" 
-                        className="text-acid-green/90 font-mono hover:text-cyber-blue transition-colors"
-                      >
-                        booking@flowcore.collective
-                      </a>
-                    </motion.div>
+                    <div className="flex items-center gap-3 p-3 bg-flowcore-black/30 rounded-lg border border-silver/20 hover:border-light-text/50 transition-all duration-300">
+                      <span className="text-silver text-lg">✉️</span>
+                      <div>
+                        <a 
+                          href="mailto:info@flowcore.com"
+                          className="text-light-text/90 font-mono hover:text-pure-white transition-colors"
+                        >
+                          info@flowcore.com
+                        </a>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center gap-3 p-3 bg-flowcore-black/30 rounded-lg border border-silver/20 hover:border-light-text/50 transition-all duration-300">
+                      <span className="text-silver text-lg">🎵</span>
+                      <div>
+                        <a 
+                          href="mailto:bookings@flowcore.com"
+                          className="text-light-text/90 font-mono hover:text-pure-white transition-colors"
+                        >
+                          bookings@flowcore.com
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
 
               {/* Social Media */}
-              <motion.div 
-                className="bg-flowcore-black/60 backdrop-blur-md border border-cyber-blue/30 rounded-xl p-6 relative overflow-hidden"
-                whileHover={{
-                  scale: 1.02,
-                  boxShadow: "0 0 25px rgba(0,195,255,0.2)",
-                  transition: { duration: 0.3 }
-                }}
-              >
+              <div className="bg-flowcore-black/60 backdrop-blur-md border border-text-gray/30 rounded-xl p-6 relative overflow-hidden">
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-cyber-blue/5 to-transparent"
+                  className="absolute inset-0 bg-gradient-to-br from-text-gray/5 to-transparent"
                   animate={{
                     opacity: [0.3, 0.6, 0.3]
                   }}
                   transition={{
-                    duration: 5,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 1
-                  }}
-                />
-                
-                <div className="relative z-10">
-                  <h3 className="text-xl font-orbitron font-bold text-cyber-blue mb-6 flex items-center gap-2">
-                    <span className="text-2xl">🌐</span>
-                    Social Media
-                  </h3>
-                  <div className="space-y-3">
-                    {[
-                      { name: 'Instagram', handle: '@flowcore.collective', url: 'https://instagram.com/flowcore.collective', icon: '📷' },
-                      { name: 'SoundCloud', handle: 'flowcore-collective', url: 'https://soundcloud.com/flowcore-collective', icon: '🎧' },
-                      { name: 'YouTube', handle: 'Flowcore Collective', url: 'https://www.youtube.com/@FlowcoreCollective', icon: '📺' },
-                      { name: 'Bandcamp', handle: 'flowcore', url: 'https://flowcore.bandcamp.com', icon: '💿' }
-                    ].map((social) => (
-                      <motion.a
-                        key={social.name}
-                        href={social.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.05, x: 5 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="flex items-center gap-3 p-3 border border-cyber-blue/20 rounded-lg hover:border-neon-pink/50 transition-all duration-300 group bg-flowcore-black/30"
-                      >
-                        <span className="text-cyber-blue group-hover:text-neon-pink transition-colors text-lg">{social.icon}</span>
-                        <div>
-                          <div className="text-cyan-400 font-mono text-sm group-hover:text-neon-pink transition-colors">{social.name}</div>
-                          <div className="text-cyan-400/60 font-mono text-xs">{social.handle}</div>
-                        </div>
-                      </motion.a>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Community */}
-              <motion.div 
-                className="bg-flowcore-black/60 backdrop-blur-md border border-rave-purple/30 rounded-xl p-6 relative overflow-hidden"
-                whileHover={{
-                  scale: 1.02,
-                  boxShadow: "0 0 25px rgba(157,0,255,0.2)",
-                  transition: { duration: 0.3 }
-                }}
-              >
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-rave-purple/5 to-transparent"
-                  animate={{
-                    opacity: [0.3, 0.6, 0.3]
-                  }}
-                  transition={{
-                    duration: 5,
+                    duration: 6,
                     repeat: Infinity,
                     ease: "easeInOut",
                     delay: 2
@@ -387,134 +303,137 @@ export default function ContactPage() {
                 />
                 
                 <div className="relative z-10">
-                  <h3 className="text-xl font-orbitron font-bold text-rave-purple mb-6 flex items-center gap-2">
-                    <span className="text-2xl">👥</span>
-                    Community
+                  <h3 className="text-xl font-orbitron font-bold text-text-gray mb-6 flex items-center gap-2">
+                    <span>🌐</span> Social Media
                   </h3>
-                  <div className="space-y-3">
-                    <motion.a
-                      href="https://discord.gg/flowcore"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.05, x: 5 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="flex items-center gap-3 p-4 border border-rave-purple/30 rounded-lg hover:border-neon-pink/60 transition-all duration-300 group bg-flowcore-black/30"
-                    >
-                      <span className="text-rave-purple group-hover:text-neon-pink transition-colors text-xl">💬</span>
-                      <div>
-                        <div className="text-rave-purple font-mono text-sm group-hover:text-neon-pink transition-colors">Discord Server</div>
-                        <div className="text-rave-purple/60 font-mono text-xs">Underground community</div>
+                  
+                  <div className="space-y-4">
+                    {[
+                      { icon: '📸', name: 'Instagram', handle: '@flowcore_collective' },
+                      { icon: '🐦', name: 'Twitter', handle: '@flowcore_music' },
+                      { icon: '🎵', name: 'SoundCloud', handle: 'flowcore-collective' },
+                      { icon: '📺', name: 'YouTube', handle: 'FlowcoreCollective' }
+                    ].map((social) => (
+                      <div
+                        key={social.name}
+                        className="flex items-center gap-3 p-3 border border-text-gray/20 rounded-lg hover:border-silver/50 transition-all duration-300 group bg-flowcore-black/30"
+                      >
+                        <span className="text-text-gray group-hover:text-silver transition-colors text-lg">{social.icon}</span>
+                        <div>
+                          <div className="text-text-gray font-mono text-sm group-hover:text-silver transition-colors">{social.name}</div>
+                        </div>
                       </div>
-                    </motion.a>
-                    
-                    <motion.a
-                      href="https://t.me/flowcore_collective"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.05, x: 5 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="flex items-center gap-3 p-4 border border-rave-purple/30 rounded-lg hover:border-neon-pink/60 transition-all duration-300 group bg-flowcore-black/30"
-                    >
-                      <span className="text-rave-purple group-hover:text-neon-pink transition-colors text-xl">📱</span>
-                      <div>
-                        <div className="text-rave-purple font-mono text-sm group-hover:text-neon-pink transition-colors">Telegram</div>
-                        <div className="text-rave-purple/60 font-mono text-xs">Event updates</div>
-                      </div>
-                    </motion.a>
+                    ))}
                   </div>
                 </div>
-              </motion.div>
+              </div>
+
+              {/* Community */}
+              <div className="bg-flowcore-black/60 backdrop-blur-md border border-light-text/30 rounded-xl p-6 relative overflow-hidden">
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-br from-light-text/5 to-transparent"
+                  animate={{
+                    opacity: [0.3, 0.6, 0.3]
+                  }}
+                  transition={{
+                    duration: 6,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 4
+                  }}
+                />
+                
+                <div className="relative z-10">
+                  <h3 className="text-xl font-orbitron font-bold text-light-text mb-6 flex items-center gap-2">
+                    <span>👥</span> Community
+                  </h3>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3 p-4 border border-light-text/30 rounded-lg hover:border-silver/60 transition-all duration-300 group bg-flowcore-black/30">
+                      <span className="text-light-text group-hover:text-silver transition-colors text-xl">💬</span>
+                      <div>
+                        <div className="text-light-text font-mono text-sm group-hover:text-silver transition-colors">Discord Server</div>
+                        <div className="text-light-text/60 font-mono text-xs">Underground community</div>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center gap-3 p-4 border border-light-text/30 rounded-lg hover:border-silver/60 transition-all duration-300 group bg-flowcore-black/30">
+                      <span className="text-light-text group-hover:text-silver transition-colors text-xl">📱</span>
+                      <div>
+                        <div className="text-light-text font-mono text-sm group-hover:text-silver transition-colors">Telegram</div>
+                        <div className="text-light-text/60 font-mono text-xs">Event updates</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           </div>
 
-          {/* FAQ Section - Enhanced */}
-          <motion.section
-            initial={{ opacity: 0, y: 100 }}
+          {/* FAQ Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 1.2 }}
+            transition={{ delay: 1, duration: 1 }}
             className="mt-20"
           >
-            <motion.div
-              className="bg-flowcore-black/70 backdrop-blur-md border border-acid-green/30 rounded-xl p-10 relative overflow-hidden"
-              whileInView={{
-                boxShadow: [
-                  "0 0 30px rgba(57,255,20,0.2)",
-                  "0 0 50px rgba(57,255,20,0.4)",
-                  "0 0 30px rgba(57,255,20,0.2)"
-                ]
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            >
+            <div className="bg-flowcore-black/70 backdrop-blur-md border border-silver/30 rounded-xl p-10 relative overflow-hidden">
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-acid-green/3 via-cyber-blue/3 to-rave-purple/3"
+                className="absolute inset-0 bg-gradient-to-r from-pure-white/3 via-silver/3 to-light-text/3"
                 animate={{
-                  opacity: [0.3, 0.8, 0.3]
+                  opacity: [0.2, 0.5, 0.2]
                 }}
                 transition={{
-                  duration: 8,
+                  duration: 10,
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
               />
               
               <div className="relative z-10">
-                <h2 className="text-4xl font-orbitron font-black text-acid-green mb-12 text-center">
+                <h2 className="text-4xl font-orbitron font-black text-pure-white mb-12 text-center">
                   Frequently Asked Questions
                 </h2>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {[
                     {
-                      q: "Lorem ipsum dolor sit amet?",
-                      a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                      question: "How can I join the collective?",
+                      answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Send us your demo tracks and we'll get back to you."
                     },
                     {
-                      q: "Consectetur adipiscing elit sed?",
-                      a: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                      question: "Do you organize events regularly?",
+                      answer: "Yes, we organize monthly underground events in Istanbul. Follow our social media for updates."
                     },
                     {
-                      q: "Tempor incididunt ut labore?",
-                      a: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+                      question: "Can I book artists for my event?",
+                      answer: "Absolutely! Contact us via booking email with your event details and we'll arrange everything."
                     },
                     {
-                      q: "Excepteur sint occaecat cupidatat?",
-                      a: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                    },
-                    {
-                      q: "Sed ut perspiciatis unde omnis?",
-                      a: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
-                    },
-                    {
-                      q: "At vero eos et accusamus?",
-                      a: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti."
+                      question: "What music genres do you focus on?",
+                      answer: "We specialize in electronic music: psytrance, techno, acidcore, and experimental underground sounds."
                     }
                   ].map((faq, index) => (
                     <motion.div
                       key={index}
                       initial={{ opacity: 0, y: 30 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 1.3 + index * 0.1, duration: 0.8 }}
-                      className="bg-flowcore-black/40 p-6 rounded-lg border border-acid-green/20 hover:border-cyber-blue/40 transition-all duration-300 space-y-4"
-                      whileHover={{
-                        scale: 1.02,
-                        boxShadow: "0 0 20px rgba(0,195,255,0.1)"
-                      }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1, duration: 0.8 }}
+                      className="bg-flowcore-black/40 p-6 rounded-lg border border-silver/20 hover:border-light-text/40 transition-all duration-300 space-y-4"
                     >
-                      <h4 className="text-cyber-blue font-mono font-bold text-lg leading-relaxed">
-                        {faq.q}
+                      <h4 className="text-silver font-mono font-bold text-lg leading-relaxed">
+                        {faq.question}
                       </h4>
-                      <p className="text-acid-green/80 font-mono text-sm leading-relaxed">
-                        {faq.a}
+                      <p className="text-light-text/80 font-mono text-sm leading-relaxed">
+                        {faq.answer}
                       </p>
                     </motion.div>
                   ))}
                 </div>
               </div>
-            </motion.div>
-          </motion.section>
+            </div>
+          </motion.div>
         </div>
       </section>
     </main>
