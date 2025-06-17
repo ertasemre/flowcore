@@ -2,7 +2,6 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Navigation from '@/components/Navigation';
-import Image from 'next/image';
 import { useRef, useEffect, useState } from 'react';
 
 const storyChapters = [
@@ -382,7 +381,7 @@ export default function AboutPage() {
                 ease: "easeInOut"
               }}
             >
-              "We are not an event. We are the event."
+              &quot;We are not an event. We are the event.&quot;
             </motion.p>
             
             <p className="text-lg text-light-text/80 font-mono leading-relaxed max-w-3xl mx-auto">

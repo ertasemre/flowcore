@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import Navigation from '@/components/Navigation';
 import { useState } from 'react';
-import Image from 'next/image';
 import { useCart } from '@/contexts/CartContext';
 
 const merchCategories = [
@@ -109,17 +108,17 @@ const merchItems = [
 
 export default function MerchPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [selectedItem, setSelectedItem] = useState<any>(null);
+  const [selectedItem, setSelectedItem] = useState<typeof merchItems[0] | null>(null);
   const [selectedSize, setSelectedSize] = useState<string>('');
   const [selectedColor, setSelectedColor] = useState<string>('');
   const [quantity, setQuantity] = useState<number>(1);
-  const { addToCart, getTotalItems } = useCart();
+  const { addToCart } = useCart();
 
   const filteredItems = merchItems.filter(item => 
     selectedCategory === 'all' || item.category === selectedCategory
   );
 
-  const openModal = (item: any) => {
+  const openModal = (item: typeof merchItems[0]) => {
     setSelectedItem(item);
     setSelectedSize(item.sizes[0]);
     setSelectedColor(item.colors[0]);
