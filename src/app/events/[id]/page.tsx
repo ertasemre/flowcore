@@ -527,7 +527,7 @@ export default function EventDetailsPage() {
                 {event.ticketSources && (
                   <div className="space-y-3">
                     <p className="text-xs text-silver font-cs-felice uppercase tracking-cs-wider">
-                      Bilet Bilgileri:
+                      TICKET INFO:
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {event.ticketSources.map((source, idx) => (
@@ -553,11 +553,11 @@ export default function EventDetailsPage() {
                       whileTap={{ scale: 0.95 }}
                       className="inline-block neon-button px-6 py-3 text-sm font-cs-felice tracking-cs-wider uppercase w-full text-center"
                     >
-                      Bilet Al
+                      GET TICKETS
                     </motion.a>
                   ) : (
                     <div className="inline-block px-6 py-3 text-sm font-cs-felice tracking-cs-wider uppercase w-full text-center text-text-gray border border-text-gray/30 rounded">
-                      Etkinlik Sona Erdi
+                      EVENT ENDED
                     </div>
                   )}
                 </motion.div>

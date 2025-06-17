@@ -427,7 +427,7 @@ export default function AboutPage() {
                 whileTap={{ scale: 0.95 }}
                 className="inline-block px-8 py-3 text-base md:text-lg font-mono tracking-wide uppercase text-light-text border-2 border-silver/50 hover:border-silver transition-all duration-300 hover:text-pure-white"
               >
-                Meet the Artists
+                Meet the ARTISTS
               </motion.a>
             </motion.div>
           </div>
