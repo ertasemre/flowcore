@@ -7,30 +7,31 @@ import Image from 'next/image';
 const artists = [
   {
     name: 'OGIMARU',
-    genre: 'Psytrance / Hitech / Psycore / Freetekno',
-    description: 'Yüksek enerjili ve deneysel psychedelic sesleriyle tanınan DJ/prodüktör. Sert ritimleri melodik dokunuşlarla harmanlayarak dinleyicilerini dansa teşvik eder. 2016\'dan bu yana müzik üretimine devam etmektedir.',
+    realName: '@ogi.maru',
+    genre: ' HITECH / Psycore / TEKNO',
+    description: 'A founding member of Flowcore, drawing inspiration from the niche edges of the global scene. He is best known for his high-bpm psychedelic sounds that seamlessly blend hard-hitting beats with uplifting touches and dark twists. His productions are crafted to ignite the dancefloor, creating an intense yet joyful experience. He channels his creativity into producing tracks that are a sweet blend of familiar and experimental. \r\n\r\nBehind the decks he\'s always looking for unconventional combinations of powerful rhythms that are able to take shape into a vibrant story.',
     soundcloud: 'https://soundcloud.com/ogimaru',
     image: '/artists/ogimaru.jpg',
   },
   {
     name: 'ALL I CAN',
-    realName: 'Alican',
-    genre: 'Afro House / Psytrance',
-    description: 'Müzik kariyerine genç yaşta başlayan Alican, çeşitli enstrümanlarla ilgilenmiş ve 2019\'da müzik prodüksiyonuna yönelmiştir. Afro House ile başladığı yolculuğu, derin ritimleri ve etkileyici melodileriyle psytrance\'e evrilmiştir. İstanbul\'da çeşitli etkinliklerde performans sergilemektedir.',
-    soundcloud: 'https://soundcloud.com/allicanmusic',
+    realName: '@all.i.can.music',
+    genre: 'Groovy Psytrance / Zenonesque',
+    description: 'Straight from the heart of Istanbul\u2019s underground, ALL I CAN  \u2014 takes you on a journey that blends deep grooves with hypnotic energy. Starting out with guitar, piano, and percussion, his early passion for music evolved into a full-blown production obsession back in 2019.\r\nHe first explored the edges of Minimal Tech and Alternative, but it was during the pandemic that he dove headfirst into the world of psytrance \u2014 and never looked back.\r\nNow, as a rising name behind the decks, ALL I CAN crafts immersive sets that move bodies and minds alike. With a unique fusion of Minimal Tech textures and psychedelic drive, he\u2019s all about pushing sonic boundaries and creating unforgettable moments on the dancefloor.\r\n', soundcloud: 'https://soundcloud.com/allicanmusic',
     image: '/artists/allican.jpg',
   },
   {
     name: 'FORMAL',
-    genre: 'Hard Techno / Acidcore / Alternatif Dans Müziği',
-    description: '2019\'dan beri DJ\'lik yapan Formal, geniş bir müzik arşivine sahiptir ve setlerinde alternatif dans müziğinden sert ritimlere kadar geniş bir yelpazeyi yansıtır. Elektronik müziğe olan tutkusu 2010\'lara dayanmaktadır.',
-    soundcloud: 'https://soundcloud.com/hfrml',
+    realName: '@hfrml',
+    genre: 'Hard Techno / HARDCORE',
+    description: 'Flowcore\u2019s dark side and one of the OG residents, F\u00F8rmal has been a lifelong music enthusiast and a hardcore electronic music fan since 2010. He dedicated his life to creating an immense archive for expressing the vibe he wants to reflect and started DJing in 2019. The music he plays ranges from frenzied and accelerating dance music to intense and hard tracks that shake the sky and the earth. \r\n',    soundcloud: 'https://soundcloud.com/hfrml',
     image: '/artists/formal.jpg',
   },
   {
     name: 'SARPT',
-    genre: 'Groovy Techno / Psychedelic / Tribal / Epik Soundlar',
-    description: 'Sarpt, dinleyicilerini hipnotik bir yolculuğa çıkaran setleriyle tanınır. Groovy şehir seslerinden tribal ve epik dokunuşlara kadar uzanan geniş bir müzikal yelpazeye sahiptir. Hem kulüp hem de festival sahnelerinde aktif olarak performans sergilemektedir.',
+    realName: '@sarpterlemez',
+    genre: 'ACIDCORE / BREAKBEAT / PSYTRANCE',
+    description: 'One of the founders and a self-taught producer; Sarp is Dedicated to Acidcore, Breakbeat, Psytrance.\r\nHe started his musical journey by listening to PsyTrance at his young age.\r\nWith the Trance mindset Sarp has been producing music since 2019 and he is creating his own Musical universe by bringing Cinematic Sounds and hard-powerful beats together.\r\nServing the genre-bending mindset, his unique productions surprise the audience through dynamic melodical soundscapes and powerful, energetic rhythms.\r\n',
     soundcloud: 'https://soundcloud.com/sarpt',
     image: '/artists/sarpt.jpg',
   },
@@ -89,7 +90,7 @@ export default function ArtistsPage() {
                     </h3>
                     {artist.realName && (
                       <p className="text-sm text-light-text/60 font-mono mt-1">
-                        ({artist.realName})
+                        {artist.realName}
                       </p>
                     )}
                   </div>

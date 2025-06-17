@@ -478,6 +478,194 @@ const HeroSection = () => {
             />
           </motion.div>
         </motion.div>
+
+        {/* Manifesto Section */}
+        <motion.div 
+          className="mt-20 md:mt-32 max-w-4xl mx-auto relative"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+        >
+          <div className="text-center space-y-8 md:space-y-12">
+            {/* Opening Statement */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
+              className="space-y-4"
+            >
+              <motion.p 
+                className="text-xl md:text-2xl lg:text-3xl text-pure-white font-cs-felice leading-relaxed px-4"
+                animate={{
+                  textShadow: [
+                    "0 0 10px rgba(255,255,255,0.3)",
+                    "0 0 20px rgba(255,255,255,0.5)",
+                    "0 0 10px rgba(255,255,255,0.3)"
+                  ]
+                }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                We are Flowcore — a collective of dreamers, movers, lovers, builders, and noisemakers.
+              </motion.p>
+              <motion.p 
+                className="text-lg md:text-xl lg:text-2xl text-silver font-cs-felice italic px-4"
+                animate={{
+                  opacity: [0.8, 1, 0.8]
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                Not underground. Not upperground. Somewhere else entirely.
+              </motion.p>
+            </motion.div>
+
+            {/* Connection & Purpose */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 1.2, ease: "easeOut", delay: 0.4 }}
+              className="space-y-3"
+            >
+              <p className="text-lg md:text-xl text-light-text/90 font-cs-felice leading-relaxed px-4">
+                We gather to connect, to create, and to celebrate.
+              </p>
+              <p className="text-lg md:text-xl text-light-text/90 font-cs-felice leading-relaxed px-4">
+                To share moments that feel real. To spark energy in each other.
+              </p>
+            </motion.div>
+
+            {/* Beliefs & Values */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 1.2, ease: "easeOut", delay: 0.6 }}
+              className="space-y-3 relative"
+            >
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-pure-white/5 to-transparent opacity-0"
+                animate={{ opacity: [0, 0.5, 0] }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+              <p className="text-lg md:text-xl text-light-text/90 font-cs-felice leading-relaxed px-4 relative z-10">
+                We believe in collaboration over competition, unity over division.
+              </p>
+              <p className="text-lg md:text-xl text-light-text/90 font-cs-felice leading-relaxed px-4 relative z-10">
+                In having fun while building something that matters.
+              </p>
+              <p className="text-lg md:text-xl text-light-text/90 font-cs-felice leading-relaxed px-4 relative z-10">
+                In expression that goes beyond trends, beyond genres — into what&apos;s raw, bold, and new.
+              </p>
+            </motion.div>
+
+            {/* Call to Action */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 1.2, ease: "easeOut", delay: 0.8 }}
+              className="space-y-3"
+            >
+              <p className="text-lg md:text-xl text-silver/90 font-cs-felice leading-relaxed px-4">
+                In a time when justice is failing and freedom is fading, we come together.
+              </p>
+              <p className="text-lg md:text-xl text-silver/90 font-cs-felice leading-relaxed px-4">
+                To create space for art, for movement, for meaning.
+              </p>
+              <p className="text-lg md:text-xl text-silver/90 font-cs-felice leading-relaxed px-4">
+                To be loud when silence is expected. To build something honest.
+              </p>
+            </motion.div>
+
+            {/* Creative Freedom */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 1.2, ease: "easeOut", delay: 1.0 }}
+              className="space-y-3"
+            >
+              <p className="text-lg md:text-xl text-light-text/90 font-cs-felice leading-relaxed px-4">
+                We welcome emotion, chaos, softness, and connection.
+              </p>
+              <p className="text-lg md:text-xl text-light-text/90 font-cs-felice leading-relaxed px-4">
+                Creativity doesn&apos;t wait for permission.
+              </p>
+              <p className="text-lg md:text-xl text-light-text/90 font-cs-felice leading-relaxed px-4">
+                We&apos;re not waiting for better systems — we&apos;re making our own.
+              </p>
+            </motion.div>
+
+            {/* Unity Statement */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 1.2, ease: "easeOut", delay: 1.2 }}
+            >
+              <p className="text-lg md:text-xl text-light-text/90 font-cs-felice leading-relaxed px-4">
+                We believe in those who stand for unity, appreciate beauty, and lift each other up.
+              </p>
+            </motion.div>
+
+            {/* Final Call */}
+            <motion.div
+              initial={{ opacity: 0, y: 50, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 1.5, ease: "easeOut", delay: 1.4 }}
+              className="pt-8 md:pt-12"
+            >
+              <motion.p 
+                className="text-3xl md:text-4xl lg:text-5xl text-pure-white font-cs-felice font-bold tracking-cs-wider uppercase"
+                animate={{
+                  textShadow: [
+                    "0 0 15px rgba(255,255,255,0.4)",
+                    "0 0 30px rgba(255,255,255,0.7)",
+                    "0 0 15px rgba(255,255,255,0.4)"
+                  ]
+                }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                whileHover={{
+                  scale: 1.05,
+                  transition: { duration: 0.3 }
+                }}
+              >
+                Enter the flow.
+              </motion.p>
+              
+              {/* Subtle accent line */}
+              <motion.div
+                className="w-24 h-0.5 bg-silver/60 mx-auto mt-6"
+                initial={{ width: 0 }}
+                whileInView={{ width: 96 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.5, delay: 1.8 }}
+                animate={{
+                  opacity: [0.6, 1, 0.6]
+                }}
+              />
+            </motion.div>
+          </div>
+        </motion.div>
       </div>
 
       {/* Enhanced Scroll Indicator */}
