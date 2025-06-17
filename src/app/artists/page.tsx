@@ -145,13 +145,16 @@ export default function ArtistsPage() {
               </h3>
               <p className="text-light-text/80 font-mono mb-6">
               If you feel that your vibe matches ours, let us know.              </p>
-              <motion.button
+              <motion.a
+                href="https://www.instagram.com/flowcore.collective/"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="neon-button px-8 py-4 text-lg font-mono tracking-wider uppercase"
+                className="neon-button px-8 py-4 text-lg font-mono tracking-wider uppercase inline-block"
               >
                 CONTACT
-              </motion.button>
+              </motion.a>
             </div>
           </motion.div>
         </div>

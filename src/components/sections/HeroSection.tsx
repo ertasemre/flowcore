@@ -654,7 +654,7 @@ const HeroSection = () => {
               
               {/* Subtle accent line */}
               <motion.div
-                className="w-24 h-0.5 bg-silver/60 mx-auto mt-6"
+                className="w-24 h-0.5 bg-silver/60 mx-auto mt-6 mb-12"
                 initial={{ width: 0 }}
                 whileInView={{ width: 96 }}
                 viewport={{ once: true }}

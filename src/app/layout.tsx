@@ -13,15 +13,15 @@ const orbitron = Orbitron({
 });
 
 export const metadata: Metadata = {
-  title: "FLOWCORE | Underground Electronic Music Collective",
-  description: "Istanbul merkezli elektronik müzik kolektifi. Acidcore, rave kültürü ve underground electronic music sahnesi. We are not an event. We are the event.",
+  title: "FLOWCORE | Electronic Music Collective",
+  description: "Istanbul merkezli müzik, sanat ve etkinlik kolektifi.  Müzik kültürü ve undergrouronic music sahnesi. We are not an event. We are the event.",
   keywords: "flowcore, electronic music, rave, acidcore, underground, istanbul, techno, collective, elektronik müzik",
   authors: [{ name: "Flowcore Collective" }],
   openGraph: {
-    title: "FLOWCORE | Underground Electronic Music Collective",
+    title: "FLOWCORE | Electronic Music & Art Collective",
     description: "Istanbul merkezli elektronik müzik kolektifi",
     type: "website",
-    locale: "tr_TR",
+    locale: "en_EN",
   },
   robots: "index, follow",
 };
