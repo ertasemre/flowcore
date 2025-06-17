@@ -39,7 +39,7 @@ export default function ShoppingCart() {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'tween', duration: 0.3 }}
-            className="fixed top-0 right-0 h-full w-full max-w-md bg-flowcore-black/95 backdrop-blur-md border-l border-silver/30 z-[201] overflow-y-auto"
+            className="fixed top-0 right-0 h-full w-full sm:max-w-md bg-flowcore-black/95 backdrop-blur-md border-l border-silver/30 z-[201] overflow-y-auto"
           >
             <div className="p-6 h-full flex flex-col">
               {/* Header */}

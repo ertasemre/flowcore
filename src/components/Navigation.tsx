@@ -125,11 +125,27 @@ const Navigation = () => {
             </div>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden relative w-8 h-8 flex flex-col justify-center items-center space-y-1 group"
-          >
+          {/* Mobile Cart Button & Menu Button */}
+          <div className="md:hidden flex items-center space-x-4">
+            <motion.button
+              onClick={() => setIsCartOpen(true)}
+              className="relative group p-2 text-pure-white hover:text-light-text transition-colors duration-300"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 5M7 13l-1.5 5m0 0h9.5M6 21a1 1 0 100-2 1 1 0 000 2zm8 0a1 1 0 100-2 1 1 0 000 2z" />
+              </svg>
+              {getTotalItems() > 0 && (
+                <span className="absolute -top-1 -right-1 bg-pure-white text-flowcore-black text-xs rounded-full w-5 h-5 flex items-center justify-center font-cs-felice badge-pulse">
+                  {getTotalItems()}
+                </span>
+              )}
+            </motion.button>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="relative w-8 h-8 flex flex-col justify-center items-center space-y-1 group"
+            >
             <motion.span
               animate={{
                 rotate: isOpen ? 45 : 0,
@@ -151,6 +167,7 @@ const Navigation = () => {
               className="w-6 h-0.5 bg-pure-white transition-all duration-300 group-hover:bg-light-text"
             />
           </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
@@ -211,21 +228,7 @@ const Navigation = () => {
                     </Link>
                   </motion.div>
                   
-                  <motion.button
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: (navItems.length + 2) * 0.1 }}
-                    onClick={() => {
-                      setIsCartOpen(true);
-                      setIsOpen(false);
-                    }}
-                    className="w-full flex items-center justify-center py-2 text-pure-white hover:text-light-text transition-colors duration-300 font-cs-felice tracking-cs-wider"
-                  >
-                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 5M7 13l-1.5 5m0 0h9.5M6 21a1 1 0 100-2 1 1 0 000 2zm8 0a1 1 0 100-2 1 1 0 000 2z" />
-                    </svg>
-                    CART ({getTotalItems()})
-                  </motion.button>
+
                 </div>
               </div>
             </motion.div>
