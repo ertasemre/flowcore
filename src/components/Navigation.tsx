@@ -77,23 +77,52 @@ const Navigation = () => {
               </motion.div>
             ))}
             
-            {/* Cart Button */}
-            <motion.button
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: navItems.length * 0.1 }}
-              onClick={() => setIsCartOpen(true)}
-              className="relative group p-2 text-pure-white hover:text-light-text transition-colors duration-300"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 5M7 13l-1.5 5m0 0h9.5M6 21a1 1 0 100-2 1 1 0 000 2zm8 0a1 1 0 100-2 1 1 0 000 2z" />
-              </svg>
-              {getTotalItems() > 0 && (
-                <span className="absolute -top-1 -right-1 bg-pure-white text-flowcore-black text-xs rounded-full w-5 h-5 flex items-center justify-center font-cs-felice badge-pulse">
-                  {getTotalItems()}
-                </span>
-              )}
-            </motion.button>
+            {/* Auth Buttons */}
+            <div className="flex items-center space-x-4">
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: (navItems.length + 1) * 0.1 }}
+              >
+                <Link
+                  href="/login"
+                  className="text-pure-white hover:text-light-text transition-colors duration-300 font-cs-felice text-sm tracking-cs-wider"
+                >
+                  LOGIN
+                </Link>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: (navItems.length + 2) * 0.1 }}
+              >
+                <Link
+                  href="/signup"
+                  className="px-4 py-2 border border-silver/30 text-pure-white hover:bg-pure-white hover:text-flowcore-black transition-all duration-300 font-cs-felice text-sm tracking-cs-wider rounded"
+                >
+                  SIGN UP
+                </Link>
+              </motion.div>
+              
+              {/* Cart Button */}
+              <motion.button
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: (navItems.length + 3) * 0.1 }}
+                onClick={() => setIsCartOpen(true)}
+                className="relative group p-2 text-pure-white hover:text-light-text transition-colors duration-300"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 5M7 13l-1.5 5m0 0h9.5M6 21a1 1 0 100-2 1 1 0 000 2zm8 0a1 1 0 100-2 1 1 0 000 2z" />
+                </svg>
+                {getTotalItems() > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-pure-white text-flowcore-black text-xs rounded-full w-5 h-5 flex items-center justify-center font-cs-felice badge-pulse">
+                    {getTotalItems()}
+                  </span>
+                )}
+              </motion.button>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -145,12 +174,59 @@ const Navigation = () => {
                     <Link
                       href={item.href}
                       onClick={() => setIsOpen(false)}
-                      className="block py-3 text-pure-white hover:text-light-text transition-colors duration-300 font-cs-felice tracking-cs-wider border-b border-silver/10 last:border-b-0"
+                      className="block py-3 text-pure-white hover:text-light-text transition-colors duration-300 font-cs-felice tracking-cs-wider border-b border-silver/10"
                     >
                       {item.name}
                     </Link>
                   </motion.div>
                 ))}
+                
+                {/* Mobile Auth Links */}
+                <div className="pt-4 mt-4 border-t border-silver/20 space-y-3">
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: navItems.length * 0.1 }}
+                  >
+                    <Link
+                      href="/login"
+                      onClick={() => setIsOpen(false)}
+                      className="block py-2 text-pure-white hover:text-light-text transition-colors duration-300 font-cs-felice tracking-cs-wider text-center"
+                    >
+                      LOGIN
+                    </Link>
+                  </motion.div>
+                  
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: (navItems.length + 1) * 0.1 }}
+                  >
+                    <Link
+                      href="/signup"
+                      onClick={() => setIsOpen(false)}
+                      className="block py-2 px-4 border border-silver/30 text-pure-white hover:bg-pure-white hover:text-flowcore-black transition-all duration-300 font-cs-felice tracking-cs-wider rounded text-center"
+                    >
+                      SIGN UP
+                    </Link>
+                  </motion.div>
+                  
+                  <motion.button
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: (navItems.length + 2) * 0.1 }}
+                    onClick={() => {
+                      setIsCartOpen(true);
+                      setIsOpen(false);
+                    }}
+                    className="w-full flex items-center justify-center py-2 text-pure-white hover:text-light-text transition-colors duration-300 font-cs-felice tracking-cs-wider"
+                  >
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 5M7 13l-1.5 5m0 0h9.5M6 21a1 1 0 100-2 1 1 0 000 2zm8 0a1 1 0 100-2 1 1 0 000 2z" />
+                    </svg>
+                    CART ({getTotalItems()})
+                  </motion.button>
+                </div>
               </div>
             </motion.div>
           )}

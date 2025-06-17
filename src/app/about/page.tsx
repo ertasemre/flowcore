@@ -153,33 +153,45 @@ export default function AboutPage() {
       {/* Animated Background Particles */}
       {isClient && (
         <div className="fixed inset-0 z-0 pointer-events-none">
-          {Array.from({ length: 4 }).map((_, i) => (
-            <motion.div
-              key={`bg-particle-${i}`}
-              className="absolute w-0.5 h-0.5 bg-pure-white/20 rounded-full"
-              initial={{
-                x: Math.random() * window.innerWidth,
-                y: Math.random() * window.innerHeight,
-              }}
-              animate={{
-                x: [
-                  Math.random() * window.innerWidth,
-                  Math.random() * window.innerWidth
-                ],
-                y: [
-                  Math.random() * window.innerHeight,
-                  Math.random() * window.innerHeight
-                ],
-                opacity: [0.1, 0.4, 0.1]
-              }}
-              transition={{
-                duration: 20 + i * 5,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-              style={{ willChange: 'transform' }}
-            />
-          ))}
+          {Array.from({ length: 4 }).map((_, i) => {
+            // Fixed positions to avoid hydration mismatch
+            const fixedPositions = [
+              { x: 200 + i * 200, y: 150 + i * 100 },
+              { x: 400 + i * 150, y: 350 + i * 80 },
+              { x: 600 + i * 100, y: 250 + i * 120 },
+              { x: 800 + i * 180, y: 450 + i * 90 }
+            ];
+            
+            return (
+              <motion.div
+                key={`bg-particle-${i}`}
+                className="absolute w-0.5 h-0.5 bg-pure-white/20 rounded-full"
+                initial={{
+                  x: fixedPositions[i].x,
+                  y: fixedPositions[i].y,
+                }}
+                animate={{
+                  x: [
+                    fixedPositions[i].x,
+                    fixedPositions[i].x + 300,
+                    fixedPositions[i].x
+                  ],
+                  y: [
+                    fixedPositions[i].y,
+                    fixedPositions[i].y + 200,
+                    fixedPositions[i].y
+                  ],
+                  opacity: [0.1, 0.4, 0.1]
+                }}
+                transition={{
+                  duration: 20 + i * 5,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+                style={{ willChange: 'transform' }}
+              />
+            );
+          })}
         </div>
       )}
 
