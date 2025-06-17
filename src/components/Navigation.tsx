@@ -23,7 +23,7 @@ const Navigation = () => {
     { name: 'HOME', href: '/' },
     { name: 'ARTISTS', href: '/artists' },
     { name: 'EVENTS', href: '/events' },
-    { name: 'MERCH', href: '/merch' },
+    // Temporarily hidden: { name: 'MERCH', href: '/merch' },
     { name: 'ABOUT', href: '/about' },
     { name: 'CONTACT', href: '/contact' },
   ];
@@ -53,7 +53,7 @@ const Navigation = () => {
               <div className="absolute inset-0 bg-pure-white opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-full blur-lg"></div>
             </div>
             <span className="ml-2 text-lg font-orbitron font-bold text-pure-white">
-              FC
+              flowcore.collective
             </span>
           </Link>
 
@@ -77,8 +77,10 @@ const Navigation = () => {
               </motion.div>
             ))}
             
-            {/* Auth Buttons */}
+            {/* Auth Buttons - Temporarily Hidden */}
             <div className="flex items-center space-x-4">
+              {/* Temporarily hidden login/signup/cart buttons */}
+              {/* 
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -105,7 +107,6 @@ const Navigation = () => {
                 </Link>
               </motion.div>
               
-              {/* Cart Button */}
               <motion.button
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -122,11 +123,14 @@ const Navigation = () => {
                   </span>
                 )}
               </motion.button>
+              */}
             </div>
           </div>
 
-          {/* Mobile Cart Button & Menu Button */}
+          {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-4">
+            {/* Mobile Cart Button - Temporarily Hidden */}
+            {/* 
             <motion.button
               onClick={() => setIsCartOpen(true)}
               className="relative group p-2 text-pure-white hover:text-light-text transition-colors duration-300"
@@ -140,6 +144,7 @@ const Navigation = () => {
                 </span>
               )}
             </motion.button>
+            */}
 
             {/* Mobile Menu Button */}
             <button
@@ -198,7 +203,8 @@ const Navigation = () => {
                   </motion.div>
                 ))}
                 
-                {/* Mobile Auth Links */}
+                {/* Mobile Auth Links - Temporarily Hidden */}
+                {/* 
                 <div className="pt-4 mt-4 border-t border-silver/20 space-y-3">
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
@@ -227,9 +233,8 @@ const Navigation = () => {
                       SIGN UP
                     </Link>
                   </motion.div>
-                  
-
                 </div>
+                */}
               </div>
             </motion.div>
           )}

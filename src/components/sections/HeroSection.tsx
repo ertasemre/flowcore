@@ -95,29 +95,17 @@ const HeroSection = () => {
       logoTimeline
         .fromTo(logoRef.current, 
           { 
-            scale: 0,
-            rotation: -90,
+            scale: 0.8,
             opacity: 0
           },
           { 
             scale: 1,
-            rotation: 0,
             opacity: 1,
-            duration: 1.5,
-            ease: "back.out(1.7)",
+            duration: 1.2,
+            ease: "power2.out",
             delay: 0.3
           }
-        )
-        .to(logoRef.current, {
-          scale: 1.05,
-          duration: 0.2,
-          ease: "power2.out"
-        })
-        .to(logoRef.current, {
-          scale: 1,
-          duration: 0.2,
-          ease: "power2.out"
-        });
+        );
 
       // Simplified text animations
       gsap.fromTo(textRef.current?.children || [], 
@@ -196,16 +184,11 @@ const HeroSection = () => {
         <motion.div 
           ref={logoRef}
           className="mb-8 md:mb-12"
-          whileHover={{ 
-            scale: 1.1,
-            rotate: 10,
-            transition: { duration: 0.3, ease: "easeOut" }
-          }}
           onHoverStart={() => {
-            gsap.to(logoRef.current, { filter: 'drop-shadow(0 0 30px rgba(255,255,255,0.6))', duration: 0.3 });
+            gsap.to(logoRef.current, { filter: 'drop-shadow(0 0 5px rgba(255,255,255,0.6))', duration: 0.3 });
           }}
           onHoverEnd={() => {
-            gsap.to(logoRef.current, { filter: 'drop-shadow(0 0 20px rgba(255,255,255,0.3))', duration: 0.3 });
+            gsap.to(logoRef.current, { filter: 'drop-shadow(0 0 2px rgba(255,255,255,0.3))', duration: 0.3 });
           }}
         >
           <div className="relative inline-block">
@@ -238,12 +221,6 @@ const HeroSection = () => {
         <div ref={textRef} className="space-y-6 md:space-y-8">
           <motion.p 
             className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-light-text font-cs-felice tracking-cs-wide max-w-4xl mx-auto leading-relaxed px-2"
-            whileHover={{
-              color: "#ffffff",
-              scale: 1.02,
-              textShadow: "0 0 15px rgba(255,255,255,0.4)",
-              transition: { duration: 0.3 }
-            }}
             animate={{
               textShadow: [
                 "0 0 5px rgba(153,153,153,0.3)",
@@ -251,16 +228,16 @@ const HeroSection = () => {
                 "0 0 5px rgba(153,153,153,0.3)"
               ]
             }}
-            transition={{
+/*             transition={{
               duration: 4,
               repeat: Infinity,
               ease: "easeInOut"
-            }}
+            }} */
           >
-            underground electronic music collective
+           electronic music & art collective
           </motion.p>
 
-          <motion.p 
+{/*           <motion.p 
             className="text-base sm:text-lg md:text-xl lg:text-2xl text-pure-white/90 font-cs-felice italic max-w-3xl mx-auto leading-relaxed px-2"
             whileHover={{
               scale: 1.02,
@@ -277,14 +254,14 @@ const HeroSection = () => {
             }}
           >
             &ldquo;Join the flow where wonder, music, art and connection unite!&rdquo;
-          </motion.p>
+          </motion.p> */}
 
           {/* Enhanced Action Buttons with better effects */}
-          <motion.div 
+{/*           <motion.div 
             className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center items-center mt-12 md:mt-16 px-4"
             initial={{ opacity: 0, y: 50, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ delay: 3, duration: 1, ease: "easeOut" }}
+            transition={{ delay: 2, duration: 1, ease: "easeOut" }}
           >
             <motion.button
               whileHover={{ 
@@ -293,30 +270,20 @@ const HeroSection = () => {
                 transition: { duration: 0.3 }
               }}
               whileTap={{ scale: 0.95 }}
-              animate={{
-                boxShadow: [
-                  "0 0 15px rgba(255, 255, 255, 0.3)",
-                  "0 0 25px rgba(255, 255, 255, 0.5)",
-                  "0 0 15px rgba(255, 255, 255, 0.3)"
-                ]
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
               className="neon-button px-8 sm:px-10 py-3 md:py-4 text-base md:text-lg font-cs-felice tracking-cs-wider uppercase w-full sm:w-auto relative overflow-hidden"
             >
-              <span className="relative z-10">Enter Underground</span>
+              <span className="relative z-10">EXPLORE Flowcore</span>
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/8 to-transparent"
+                style={{ width: '200%', left: '-100%' }}
                 animate={{
-                  x: ['-100%', '100%']
+                  x: ['0%', '100%']
                 }}
                 transition={{
-                  duration: 2.5,
+                  duration: 4,
                   repeat: Infinity,
-                  ease: "linear"
+                  ease: "easeInOut",
+                  repeatDelay: 2
                 }}
               />
             </motion.button>
@@ -332,88 +299,190 @@ const HeroSection = () => {
               whileTap={{ scale: 0.95 }}
               className="px-8 sm:px-10 py-3 md:py-4 text-base md:text-lg font-cs-felice tracking-cs-wider uppercase text-light-text border-2 border-text-gray/50 hover:border-silver transition-all duration-300 w-full sm:w-auto"
             >
-              Latest Mix
+              Latest MIX
             </motion.button>
-          </motion.div>
+          </motion.div> */}
         </div>
 
-        {/* Enhanced Save The Date */}
+        {/* Event Announcement Card */}
         <motion.div 
-          className="mt-16 md:mt-20 p-6 md:p-8 bg-flowcore-black/60 backdrop-blur-md border border-silver/20 rounded-xl max-w-lg mx-auto hover:border-light-text/40 transition-all duration-300 relative overflow-hidden"
+          className="mt-16 md:mt-20 max-w-5xl mx-auto relative overflow-hidden"
           initial={{ opacity: 0, y: 50, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ delay: 3.5, duration: 1.2, ease: "easeOut" }}
-          whileHover={{
-            scale: 1.05,
-            boxShadow: "0 0 35px rgba(153, 153, 153, 0.3)",
-            transition: { duration: 0.3 }
-          }}
         >
           <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-medium-gray/3 via-light-gray/3 to-text-gray/3 rounded-xl"
-            animate={{
-              opacity: [0.3, 0.7, 0.3],
-              scale: [1, 1.02, 1]
+            className="relative rounded-2xl overflow-hidden bg-flowcore-black/60 backdrop-blur-md border border-silver/40 hover:border-light-text/60 transition-all duration-500 group"
+            whileHover={{
+              scale: 1.01,
+              boxShadow: "0 25px 80px rgba(0, 0, 0, 0.6), 0 0 50px rgba(255, 255, 255, 0.1)",
+              transition: { duration: 0.4 }
             }}
-            transition={{
-              duration: 5,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
-          
-          <div className="relative z-10">
-            <motion.p 
-              className="text-xs md:text-sm text-light-text/60 font-cs-felice uppercase tracking-cs-wider mb-2 md:mb-3"
-              animate={{
-                opacity: [0.6, 1, 0.6]
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut"
+          >
+            {/* Header */}
+            <div className="relative z-20 p-4 sm:p-6 border-b border-silver/20 bg-flowcore-black/80 backdrop-blur-sm">
+              <div className="flex items-center justify-between">
+                <motion.div 
+                  className="flex items-center gap-3"
+                  animate={{
+                    opacity: [0.8, 1, 0.8]
+                  }}
+                  transition={{
+                    duration: 2.5,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                >
+                  <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+                  <span className="text-xs sm:text-sm font-cs-felice text-light-text/80 uppercase tracking-cs-wider">
+                    NEXT EVENT
+                  </span>
+                </motion.div>
+                
+                <motion.div 
+                  className="text-xs sm:text-sm font-cs-felice text-silver/80 uppercase tracking-cs-wider"
+                  animate={{
+                    textShadow: [
+                      "0 0 5px rgba(204,204,204,0.3)",
+                      "0 0 15px rgba(204,204,204,0.6)",
+                      "0 0 5px rgba(204,204,204,0.3)"
+                    ]
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                >
+                  JUNE 27TH, 2025
+                </motion.div>
+              </div>
+            </div>
+
+            {/* Main Event Image */}
+            <motion.div 
+              className="relative group/image"
+              whileHover={{
+                scale: 1.02,
+                transition: { duration: 0.3 }
               }}
             >
-              Save The Date
-            </motion.p>
-            
-            <motion.h3 
-              className="text-2xl md:text-3xl font-orbitron font-bold text-pure-white mb-2"
+              {/* Responsive Event Images */}
+              <div className="relative">
+                {/* Landscape image for wider screens */}
+                <div className="hidden sm:block">
+                  <Image
+                    src="/events/overflow-2.jpeg"
+                    alt="Overflow Event - Full Lineup"
+                    width={1600}
+                    height={591}
+                    className="w-full h-auto object-cover group-hover/image:brightness-110 transition-all duration-500"
+                    priority
+                  />
+                </div>
+                
+                {/* Square image for mobile/portrait */}
+                <div className="block sm:hidden">
+                  <Image
+                    src="/events/overflow-1.jpeg"
+                    alt="Overflow Event - Full Lineup"
+                    width={1600}
+                    height={1600}
+                    className="w-full h-auto object-cover group-hover/image:brightness-110 transition-all duration-500"
+                    priority
+                  />
+                </div>
+                
+                {/* Subtle overlay for interactivity */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover/image:opacity-100"
+                  animate={{
+                    x: ['-100%', '100%']
+                  }}
+                  transition={{
+                    duration: 2.5,
+                    repeat: Infinity,
+                    repeatDelay: 3,
+                    ease: "easeInOut"
+                  }}
+                />
+
+                {/* Corner accent */}
+                <motion.div
+                  className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-pure-white/30"
+                  animate={{
+                    opacity: [0.3, 0.8, 0.3]
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
+              </div>
+            </motion.div>
+
+            {/* Action Footer */}
+            <div className="relative z-20 p-4 sm:p-6 bg-flowcore-black/80 backdrop-blur-sm">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                {/* Event Status */}
+                <div className="flex items-center gap-4 text-xs sm:text-sm font-cs-felice text-light-text/70 uppercase tracking-cs-wider">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                    <span>TICKETS AVAILABLE</span>
+                  </div>
+                  <span className="text-text-gray/50">|</span>
+                  <span>EARLY BIRD PRICING</span>
+                </div>
+
+                {/* CTA Button */}
+                <motion.a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ 
+                    scale: 1.05,
+                    boxShadow: "0 0 30px rgba(255, 255, 255, 0.4)",
+                    transition: { duration: 0.3 }
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-block neon-button px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base font-cs-felice tracking-cs-wider uppercase relative overflow-hidden group/btn min-w-[140px] text-center"
+                >
+                  <span className="relative z-10">GET TICKETS</span>
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
+                    style={{ width: '200%', left: '-100%' }}
+                    animate={{
+                      x: ['0%', '100%']
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      repeatDelay: 2
+                    }}
+                  />
+                </motion.a>
+              </div>
+            </div>
+
+            {/* Floating border accent */}
+            <motion.div
+              className="absolute inset-0 rounded-2xl border-2 border-transparent bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 pointer-events-none"
               animate={{
-                textShadow: [
-                  "0 0 8px rgba(255,255,255,0.4)",
-                  "0 0 20px rgba(255,255,255,0.8)",
-                  "0 0 8px rgba(255,255,255,0.4)"
-                ],
-                scale: [1, 1.02, 1]
+                background: [
+                  'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%)',
+                  'linear-gradient(90deg, transparent 30%, rgba(255,255,255,0.1) 80%, transparent 100%)',
+                  'linear-gradient(90deg, transparent 60%, rgba(255,255,255,0.1) 100%, transparent 100%)'
+                ]
               }}
               transition={{
                 duration: 4,
                 repeat: Infinity,
-                ease: "easeInOut"
+                ease: "linear"
               }}
-            >
-              JUNE 27TH
-            </motion.h3>
-            
-            <p className="text-silver font-cs-felice mb-4 text-center text-sm md:text-base">
-              STAY TUNED FOR OUR<br/>
-              BIGGEST EVENT YET
-            </p>
-            
-            <motion.button
-              whileHover={{ 
-                scale: 1.05,
-                color: "#ffffff",
-                boxShadow: "0 0 20px rgba(255, 255, 255, 0.4)",
-                transition: { duration: 0.3 }
-              }}
-              whileTap={{ scale: 0.98 }}
-              className="text-sm font-cs-felice text-text-gray hover:text-pure-white transition-colors duration-300 border-b border-text-gray/50 hover:border-pure-white pb-1 w-full text-center"
-            >
-              GET NOTIFIED →
-            </motion.button>
-          </div>
+            />
+          </motion.div>
         </motion.div>
       </div>
 

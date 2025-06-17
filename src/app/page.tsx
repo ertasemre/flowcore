@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <Navigation />
       <HeroSection />
-      <MerchPreview />
+      {/* <MerchPreview /> */}
     </>
   );
 }

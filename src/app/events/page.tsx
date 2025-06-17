@@ -4,8 +4,26 @@ import { motion } from 'framer-motion';
 import Navigation from '@/components/Navigation';
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const events = [
+  {
+    id: 0,
+    title: 'OVER:FLOW',
+    date: '27 June 2025',
+    time: '22:00 - 05:00',
+    venue: 'Suma Han - Both Floors',
+    location: 'Karaköy, İstanbul',
+    artists: ['L\'ART CENE', 'ABEM', 'DUBSTRACT', 'DYLN', 'GUNSELX', 'FOLDED', 'OGIMARU', 'SARPT', 'ALL I CAN', 'SEYMEN', 'FORMAL', 'KUZEN'],
+    description: 'Get ready for 2 stages of niche underground sounds and meticulously crafted decor & visuals',
+    ticketUrl: 'https://bugece.co/en/event/overflow-06-27-25',
+    status: 'upcoming',
+    poster: '/events/overflow-1.jpeg',
+    ticketSources: [
+      { name: 'Bugece', price: '' },
+      { name: 'Instagram DM', price: '' }
+    ],
+  },
   {
     id: 1,
     title: 'ROOTS OF THE FUTURE',
@@ -19,8 +37,7 @@ const events = [
     status: 'past',
     poster: '/events/rootofthefuture.png',
     ticketSources: [
-      { name: 'Sold Out', price: 'All Venues' },
-      { name: 'Legendary Night', price: '★★★★★' }
+      { name: 'Sold Out', price: 'at All Channels' },
     ],
   },
   {
@@ -36,9 +53,9 @@ const events = [
     status: 'past',
     poster: '/events/newyearsevegathering.jpeg',
     ticketSources: [
-      { name: 'Bugece', price: '+2' },
-      { name: 'The Black Cave', price: '+2' },
-      { name: 'At Door', price: '+3' }
+      { name: 'Bugece', price: '' },
+      { name: 'The Black Cave', price: '' },
+      { name: 'At Door', price: '' }
     ],
   },
   {
@@ -163,8 +180,12 @@ export default function EventsPage() {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.2, duration: 0.8 }}
-                className="group relative bg-flowcore-black/50 backdrop-blur-md border border-silver/20 rounded-lg overflow-hidden hover:border-light-text/50 transition-all duration-300"
               >
+                <div className="block group relative bg-flowcore-black/50 backdrop-blur-md border border-silver/20 rounded-lg overflow-hidden hover:border-light-text/50 transition-all duration-300">
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                  >
                 {/* Event Poster */}
                 <div className="relative h-64 overflow-hidden">
                   <Image
@@ -249,24 +270,49 @@ export default function EventsPage() {
                     </div>
                   )}
 
-                  {/* CTA Button */}
-                  <motion.div className="pt-4">
+                  {/* CTA Buttons */}
+                  <motion.div className="pt-4 space-y-3">
                     {event.status === 'upcoming' ? (
-                      <motion.a
-                        href={event.ticketUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="inline-block neon-button px-6 py-3 text-sm font-cs-felice tracking-cs-wider uppercase w-full text-center"
-                      >
-                        Bilet Al
-                      </motion.a>
+                      <div className="flex gap-3">
+                        <motion.a
+                          href={event.ticketUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="inline-block neon-button px-6 py-3 text-sm font-cs-felice tracking-cs-wider uppercase flex-1 text-center"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          Bilet Al
+                        </motion.a>
+                        <Link href={`/events/${event.id}`}>
+                          <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="px-6 py-3 text-sm font-cs-felice tracking-cs-wider uppercase text-light-text border-2 border-silver/20 hover:border-silver/50 hover:text-pure-white transition-all duration-300 flex-1"
+                          >
+                            Detaylar
+                          </motion.button>
+                        </Link>
+                      </div>
                     ) : (
-                      <div className="inline-block px-6 py-3 text-sm font-cs-felice tracking-cs-wider uppercase w-full text-center text-text-gray border border-text-gray/30 rounded">
-                        Etkinlik Sona Erdi
+                      <div className="flex gap-3">
+                        <div className="inline-block px-6 py-3 text-sm font-cs-felice tracking-cs-wider uppercase flex-1 text-center text-text-gray border border-text-gray/30 rounded">
+                          Etkinlik Sona Erdi
+                        </div>
+                        <Link href={`/events/${event.id}`}>
+                          <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="px-6 py-3 text-sm font-cs-felice tracking-cs-wider uppercase text-light-text border-2 border-silver/20 hover:border-silver/50 hover:text-pure-white transition-all duration-300 flex-1"
+                          >
+                            Detaylar
+                          </motion.button>
+                        </Link>
                       </div>
                     )}
+                  </motion.div>
+                </div>
                   </motion.div>
                 </div>
               </motion.div>

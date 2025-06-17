@@ -202,7 +202,7 @@ export default function MerchPreview() {
                   whileTap={{ scale: 0.95 }}
                   className="neon-button px-8 py-4 font-cs-felice tracking-cs-wider uppercase"
                 >
-                  Shop All Merch
+                  SHOP ALL MERCH
                 </motion.button>
               </Link>
               
@@ -211,7 +211,7 @@ export default function MerchPreview() {
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 border-2 border-silver/30 text-pure-white font-cs-felice tracking-cs-wider uppercase hover:border-pure-white hover:bg-pure-white/10 transition-all duration-300"
               >
-                Size Guide
+                SIZE GUIDE
               </motion.button>
             </div>
             
@@ -223,7 +223,7 @@ export default function MerchPreview() {
               className="mt-8 pt-6 border-t border-silver/20"
             >
               <p className="text-silver font-cs-felice text-sm tracking-cs-wider uppercase mb-2">
-                ⚡ Limited Time Offer
+                ⚡ LIMITED TIME OFFER
               </p>
               <p className="text-light-text/80 font-cs-felice text-lg">
                 FREE SHIPPING on orders over ₺500
