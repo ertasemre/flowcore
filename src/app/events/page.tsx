@@ -181,7 +181,7 @@ export default function EventsPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
                 whileHover={{ y: -8 }}
-                className="block group relative bg-flowcore-black/50 backdrop-blur-md border border-silver/20 rounded-lg overflow-hidden hover:border-light-text/50 hover:shadow-2xl hover:shadow-light-text/20 transition-all duration-300"
+                className="block group relative bg-flowcore-black/50 backdrop-blur-md border border-silver/20 rounded-lg overflow-hidden hover:border-light-text/50 hover:shadow-2xl hover:shadow-light-text/20 transition-all duration-300 flex flex-col h-full"
               >
                 {/* Event Poster */}
                 <div className="relative h-64 overflow-hidden">
@@ -211,64 +211,66 @@ export default function EventsPage() {
                 </div>
 
                 {/* Event Info */}
-                <div className="p-6 space-y-4">
-                  <h3 className="text-2xl font-orbitron font-bold text-pure-white">
-                    {event.title}
-                  </h3>
-                  
-                  <div className="space-y-2 text-sm font-cs-felice">
-                    <div className="flex items-center gap-2">
-                      <span className="text-silver">📅</span>
-                      <span className="text-light-text/80">{event.date} • {event.time}</span>
+                <div className="p-6 flex flex-col flex-1">
+                  <div className="space-y-4 flex-1">
+                    <h3 className="text-2xl font-orbitron font-bold text-pure-white">
+                      {event.title}
+                    </h3>
+                    
+                    <div className="space-y-2 text-sm font-cs-felice">
+                      <div className="flex items-center gap-2">
+                        <span className="text-silver">📅</span>
+                        <span className="text-light-text/80">{event.date} • {event.time}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-silver">📍</span>
+                        <span className="text-light-text/80">{event.venue}, {event.location}</span>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-silver">📍</span>
-                      <span className="text-light-text/80">{event.venue}, {event.location}</span>
-                    </div>
-                  </div>
 
-                  <p className="text-light-text/70 font-cs-felice text-sm leading-relaxed">
-                    {event.description}
-                  </p>
-
-                  {/* Artists */}
-                  <div className="space-y-2">
-                    <p className="text-xs text-silver font-cs-felice uppercase tracking-cs-wider">
-                      Sanatçılar:
+                    <p className="text-light-text/70 font-cs-felice text-sm leading-relaxed">
+                      {event.description}
                     </p>
-                    <div className="flex flex-wrap gap-2">
-                      {event.artists.map((artist) => (
-                        <span
-                          key={artist}
-                          className="px-2 py-1 text-xs font-cs-felice bg-text-gray/20 text-text-gray border border-text-gray/30 rounded hover:bg-silver/20 hover:text-silver transition-colors duration-300"
-                        >
-                          {artist}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
 
-                  {/* Ticket Sources */}
-                  {event.ticketSources && (
+                    {/* Artists */}
                     <div className="space-y-2">
                       <p className="text-xs text-silver font-cs-felice uppercase tracking-cs-wider">
-                        Bilet Satış Noktaları:
+                        Sanatçılar:
                       </p>
                       <div className="flex flex-wrap gap-2">
-                        {event.ticketSources.map((source, idx) => (
+                        {event.artists.map((artist) => (
                           <span
-                            key={idx}
-                            className="px-2 py-1 text-xs font-cs-felice bg-pure-white/20 text-pure-white border border-pure-white/30 rounded"
+                            key={artist}
+                            className="px-2 py-1 text-xs font-cs-felice bg-text-gray/20 text-text-gray border border-text-gray/30 rounded hover:bg-silver/20 hover:text-silver transition-colors duration-300"
                           >
-                            {source.name} {source.price}
+                            {artist}
                           </span>
                         ))}
                       </div>
                     </div>
-                  )}
+
+                    {/* Ticket Sources */}
+                    {event.ticketSources && (
+                      <div className="space-y-2">
+                        <p className="text-xs text-silver font-cs-felice uppercase tracking-cs-wider">
+                          Bilet Satış Noktaları:
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {event.ticketSources.map((source, idx) => (
+                            <span
+                              key={idx}
+                              className="px-2 py-1 text-xs font-cs-felice bg-pure-white/20 text-pure-white border border-pure-white/30 rounded"
+                            >
+                              {source.name} {source.price}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
 
                   {/* CTA Buttons */}
-                  <motion.div className="pt-4 space-y-3">
+                  <motion.div className="pt-4">
                     {event.status === 'upcoming' ? (
                       <div className="flex gap-3">
                         <motion.a
@@ -293,20 +295,15 @@ export default function EventsPage() {
                         </Link>
                       </div>
                     ) : (
-                      <div className="flex gap-3">
-                        <div className="inline-block px-6 py-3 text-sm font-cs-felice tracking-cs-wider uppercase flex-1 text-center text-text-gray border border-text-gray/30 rounded">
-                          Etkinlik Sona Erdi
-                        </div>
-                        <Link href={`/events/${event.id}`}>
-                          <motion.button
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="px-6 py-3 text-sm font-cs-felice tracking-cs-wider uppercase text-light-text border-2 border-silver/20 hover:border-silver/50 hover:text-pure-white transition-all duration-300 flex-1"
-                          >
-                            DETAILS
-                          </motion.button>
-                        </Link>
-                      </div>
+                      <Link href={`/events/${event.id}`} className="w-full">
+                        <motion.button
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="w-full px-6 py-3 text-sm font-cs-felice tracking-cs-wider uppercase text-light-text border-2 border-silver/20 hover:border-silver/50 hover:text-pure-white transition-all duration-300"
+                        >
+                          VIEW DETAILS
+                        </motion.button>
+                      </Link>
                     )}
                   </motion.div>
                 </div>
