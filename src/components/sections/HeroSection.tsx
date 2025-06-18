@@ -197,12 +197,12 @@ const HeroSection = () => {
               alt="Flowcore"
               width={280}
               height={280}
-              className="mx-auto filter drop-shadow-[0_0_20px_rgba(255,255,255,0.3)] brightness-0 invert"
+              className="mx-auto p-2"
               priority
             />
             
             {/* Simplified glowing ring */}
-            <motion.div 
+          {/*   <motion.div 
               className="absolute inset-[-20px] rounded-full border border-silver/20"
               animate={{ 
                 scale: [1, 1.1, 1],
@@ -213,7 +213,7 @@ const HeroSection = () => {
                 repeat: Infinity,
                 ease: "linear"
               }}
-            />
+            /> */}
           </div>
         </motion.div>
 
@@ -436,7 +436,7 @@ const HeroSection = () => {
 
                 {/* CTA Button */}
                 <motion.a
-                  href="#"
+                  href="https://bugece.co/en/event/overflow-06-27-25"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ 

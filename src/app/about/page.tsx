@@ -214,7 +214,7 @@ export default function AboutPage() {
             className="text-center"
           >
             <motion.h1 
-              className="text-8xl md:text-9xl font-orbitron font-black text-pure-white glitch-text mb-8" 
+              className="text-6xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-orbitron font-black text-pure-white glitch-text mb-8 whitespace-nowrap" 
               data-text="FLOWCORE"
               animate={{
                 textShadow: [
