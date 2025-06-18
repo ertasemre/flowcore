@@ -10,7 +10,7 @@ const events = [
   {
     id: 0,
     title: 'OVER:FLOW',
-    date: '27 June 2025',
+    date: '27.06.2025',
     time: '22:00 - 05:00',
     venue: 'Suma Han - Both Floors',
     location: 'Karaköy, İstanbul',
@@ -27,7 +27,7 @@ const events = [
   {
     id: 1,
     title: 'ROOTS OF THE FUTURE',
-    date: '22 Şubat 2024',
+    date: '22.02.2025',
     time: '22:00 - 04:00',
     venue: 'Suma Han Studio Stage',
     location: 'Karaköy, İstanbul',
@@ -43,7 +43,7 @@ const events = [
   {
     id: 2,
     title: 'NEW YEAR\'S EVE GATHERING',
-    date: '31 Aralık 2023',
+    date: '31.12.2023',
     time: '21:00 - 05:00',
     venue: 'The Black Cave',
     location: 'Maslak, İstanbul',
@@ -61,7 +61,7 @@ const events = [
   {
     id: 3,
     title: 'URBAN FUSION',
-    date: '14 Eylül 2024',
+    date: '14.09.2024',
     time: '11:00 - 02:00',
     venue: 'The Black Cave',
     location: 'Maslak, İstanbul',
@@ -78,11 +78,11 @@ const events = [
   {
     id: 4,
     title: 'ENTER THE FLOW',
-    date: '12 Ağustos 2024',
+    date: '12.08.2024',
     time: '20:00 - 03:00',
     venue: 'Underground Club',
     location: 'Beyoğlu, İstanbul',
-    artists: ['All I Can', 'Formal', 'Ogimaru', 'Sarpt', 'Local Support'],
+    artists: [ 'Laren','All I Can', 'Formal', 'Ogimaru', 'Sarpt', 'Stamina'],
     description: 'Flowcore Collective\'in en iddialı etkinliklerinden biri olan Enter The Flow, underground elektronik müziğin en karanlık ve enerjik yanlarını keşfe çıkarıyor. Progressive house\'dan hard techno\'ya uzanan bu yolculukta, katılımcılar müziğin büyüsüne kapılıyor.',
     ticketUrl: 'https://bugece.co/flowcore-enter-flow',
     status: 'past',
@@ -95,11 +95,11 @@ const events = [
   {
     id: 5,
     title: 'KANZEN CHAOS',
-    date: '25 Mayıs 2024',
+    date: '30.11.2024',
     time: '22:30 - 05:00',
     venue: 'Secret Location',
     location: 'İstanbul',
-    artists: ['Kanzen', 'All I Can', 'Formal', 'Ogimaru', 'Sarpt'],
+    artists: ['Mani', 'Monif', 'ABEM', 'All I Can', 'Formal', 'Ogimaru', 'Sarpt'],
     description: 'Kanzen Chaos, Flowcore Collective\'in en deneysel ve sıra dışı etkinliği. Gizli bir mekanda düzenlenen bu gecede, chaos theory\'nin müzikle buluştuğu noktada, katılımcılar öngörülemez ritimler ve atmosferlerle karşılaşıyor. Sınırları zorlayan bir elektronik müzik deneyimi.',
     ticketUrl: 'https://bugece.co/flowcore-kanzen-chaos',
     status: 'past',
@@ -315,7 +315,7 @@ export default function EventsPage() {
           </div>
 
           {/* Gallery Section */}
-          <motion.div
+{/*           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
@@ -352,7 +352,7 @@ export default function EventsPage() {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </section>
     </main>

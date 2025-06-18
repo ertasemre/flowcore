@@ -32,8 +32,8 @@ const eventDetails = {
   1: {
     id: 1,
     title: 'ROOTS OF THE FUTURE',
-    date: '22 Şubat 2024',
-    time: '22:00 - 04:00',
+    date: '22 Şubat 2025',
+    time: '22:00 - 05:00',
     venue: 'Suma Han Studio Stage',
     location: 'Karaköy, İstanbul',
     artists: ['Oriofonul', 'All I Can', 'Sarpt', 'Ogimaru', 'Salek', 'Oxomo'],
