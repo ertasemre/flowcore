@@ -157,7 +157,7 @@ body {
 }
 
 /* Loading screen scanner line */
-.scanner-line {
+/* .scanner-line {
   position: absolute;
   top: 0;
   left: -100%;
@@ -165,7 +165,7 @@ body {
   height: 100%;
   background: linear-gradient(to bottom, transparent, #ffffff, transparent);
   animation: scan 2s linear infinite;
-}
+} */
 
 @keyframes scan {
   0% { left: -100%; }

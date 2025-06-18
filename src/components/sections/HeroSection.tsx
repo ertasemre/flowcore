@@ -32,13 +32,13 @@ const HeroSection = () => {
       if (typeof window === 'undefined') return;
       
       // Reduced particle count for better performance
-      const particleElements = Array.from({ length: 5 }, (_, i) => (
+      const particleElements = Array.from({ length: 30 }, (_, i) => (
         <motion.div
           key={`particle-${i}`}
           className="absolute rounded-full"
           style={{
-            width: 1.5,
-            height: 1.5,
+            width: 2.5,
+            height: 2.5,
             backgroundColor: i % 2 === 0 ? '#ffffff' : '#cccccc',
             willChange: 'transform'
           }}
@@ -164,7 +164,7 @@ const HeroSection = () => {
     >
       {/* Simplified Background Grid */}
       <div className="absolute inset-0 cyber-grid opacity-10">
-        <div className="scanner-line"></div>
+
       </div>
 
       {/* Enhanced Floating Particles */}

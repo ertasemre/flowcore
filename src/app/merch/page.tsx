@@ -282,7 +282,7 @@ export default function MerchPage() {
 
                   {/* Glitch overlay */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="scanner-line"></div>
+              
                   </div>
                   
                   <div className="absolute inset-0 bg-gradient-to-t from-flowcore-black via-transparent to-transparent"></div>
@@ -373,7 +373,7 @@ export default function MerchPage() {
                     </span>
                   </div>
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="scanner-line"></div>
+                 
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-flowcore-black via-transparent to-transparent"></div>
                   <div className="absolute top-4 left-4">
