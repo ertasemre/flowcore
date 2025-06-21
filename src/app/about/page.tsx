@@ -3,6 +3,8 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Navigation from '@/components/Navigation';
 import { useRef, useEffect, useState } from 'react';
+import MetaBalls from '@/components/MetaBalls';
+
 
 const storyChapters = [
   {
@@ -162,6 +164,22 @@ export default function AboutPage() {
       {/* Animated Background Particles */}
       {isClient && (
         <div className="fixed inset-0 z-0 pointer-events-none">
+          <div className="w-full h-full pointer-events-auto">
+            <MetaBalls
+              color="#232323"
+              cursorBallColor="#000000"
+              cursorBallSize={1}
+              ballCount={25}
+              animationSize={12}
+              enableMouseInteraction={false}
+              enableTransparency={false}
+              hoverSmoothness={0.05}
+              clumpFactor={1}
+              speed={0.1}
+            />
+          </div>
+        </div>
+/*         <div className="fixed inset-0 z-0 pointer-events-none">
           {Array.from({ length: 4 }).map((_, i) => {
             // Fixed positions to avoid hydration mismatch
             const fixedPositions = [
@@ -201,7 +219,7 @@ export default function AboutPage() {
               />
             );
           })}
-        </div>
+        </div> */
       )}
 
       {/* Hero Section */}
